@@ -1,2 +1,2 @@
 # citybike
-Paperboy meets NYC
+Citibike meets NYC
