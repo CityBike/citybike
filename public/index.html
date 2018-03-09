@@ -29,12 +29,11 @@
     };
 
     var bikergirl;
-
     var game = new Phaser.Game(config);
     var cursors;
 
     function preload() {
-      this.load.image('background', '../assets/TestRoadMap_long.png')
+      this.load.image('roadmap', '../assets/TestRoadMapv1.png');
       this.load.spritesheet('bikergirl', '../assets/paperboy.gif', { frameWidth: 60, frameHeight: 48 })
       // <static> spriteSheet(game, key, frameWidth, frameHeight, frameMax, margin, spacing)
       // frameHeight: The fixed height of each frame of the animation.
@@ -42,7 +41,11 @@
     }
 
     function create() {
-      this.add.image(600, 300, 'background')
+      this.add.image(1100, 0, 'roadmap');
+      // this.cameras.add(90000, 12200, 600, 800, true, 'moving');
+      // this.cameras.main.x = -100;
+      // this.cameras.main.y = 100;
+      // var roadmap = this.add.displayList.list[0]
 
       bikergirl = this.physics.add.sprite(150, 550, 'bikergirl', 55)
       //  this.physics.add.sprite(x, y, key, frame)
@@ -74,13 +77,23 @@
     }
 
     function update() {
+
+      // this.cameras.main.x = this.cameras.main.x - 1;
+      // this.cameras.main.y = this.cameras.main.y + 1;
+      var roadmap = this.add.displayList.list[0];
+      roadmap.y = roadmap.y + .3;
+      roadmap.x = roadmap.x - .5;
+
       if (cursors.left.isDown) {
         bikergirl.setVelocityX(-160);
 
         bikergirl.anims.play('left', true);
       }
+
+
       else if (cursors.right.isDown) {
         bikergirl.setVelocityX(160);
+
 
         bikergirl.anims.play('right', true);
       }
@@ -88,12 +101,13 @@
         bikergirl.setVelocityX(0);
 
         bikergirl.anims.play('turn');
-      }
 
-      if (cursors.up.isDown && bikergirl.body.touching.down) {
-        bikergirl.setVelocityY(-330);
-      }
 
+        if (cursors.up.isDown && bikergirl.body.touching.down) {
+          bikergirl.setVelocityY(-330);
+        }
+
+      }
     }
 
 
