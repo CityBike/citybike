@@ -29,15 +29,24 @@
       var game = new Phaser.Game(config);
 
       function preload() {
-
+        this.load.image('roadmap', '../assets/TestRoadMapv1.png');
       }
 
       function create() {
-
+        this.add.image(1100, 0, 'roadmap');
+        // this.cameras.add(90000, 12200, 600, 800, true, 'moving');
+        // this.cameras.main.x = -100;
+        // this.cameras.main.y = 100;
+        // var roadmap = this.add.displayList.list[0]
+        console.log(this);
       }
 
       function update() {
-
+        // this.cameras.main.x = this.cameras.main.x - 1;
+        // this.cameras.main.y = this.cameras.main.y + 1;
+        var roadmap = this.add.displayList.list[0];
+        roadmap.y = roadmap.y + .3;
+        roadmap.x = roadmap.x - .5;
       }
 
 
