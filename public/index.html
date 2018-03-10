@@ -50,6 +50,13 @@
 
       papergirl = this.add.sprite(150, 200, 'papergirl', 'fdddd_07.gif')
 
+      frameNames = this.anims.generateFrameNames('papergirl', {
+        start: 3, end: 59, zeroPad: 2, prefix: 'fdddd_', suffix: '.gif'
+      })
+      console.log("this.anims.generateFrameNames", this.anims.generateFrameNames)
+      console.log('this.textureManager', this.anims.textureManager)
+      console.log("frameNames", frameNames)
+
       // papergirl = this.physics.add.sprite(150, 200, 'papergirl')
       console.log(papergirl.frame.texture.frames)
       // console.log(Phaser.Animation.AnimationFrame) //AnimationFrame(textureKey, textureFrame, index, frame)
