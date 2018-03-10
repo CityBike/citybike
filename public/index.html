@@ -28,13 +28,14 @@
       }
     };
 
-    var bikergirl;
+    var papergirl;
     var game = new Phaser.Game(config);
     var cursors;
 
     function preload() {
       this.load.image('roadmap', '../assets/TestRoadMapv1.png');
-      this.load.spritesheet('bikergirl', '../assets/paperboy.gif', { frameWidth: 60, frameHeight: 48 })
+      this.load.spritesheet('papergirl', '../assets/papergirl.png', { frameWidth: 40, frameHeight: 48 })
+      // this.load.atlas('papergirl', '../assets/papergirl.png', '../assets/papergirl.json');
       // <static> spriteSheet(game, key, frameWidth, frameHeight, frameMax, margin, spacing)
       // frameHeight: The fixed height of each frame of the animation.
 
@@ -47,31 +48,31 @@
       // this.cameras.main.y = 100;
       // var roadmap = this.add.displayList.list[0]
 
-      bikergirl = this.physics.add.sprite(150, 550, 'bikergirl', 55)
+      papergirl = this.physics.add.sprite(150, 200, 'papergirl', "fdddd_03.gif")
       //  this.physics.add.sprite(x, y, key, frame)
       // the x and y  is where the sprite starts on the page. 
 
-      bikergirl.setBounce(0.2);
-      bikergirl.setCollideWorldBounds(false);
+      papergirl.setBounce(0.2);
+      papergirl.setCollideWorldBounds(false);
 
       cursors = this.input.keyboard.createCursorKeys();
 
       this.anims.create({
         key: 'left',
-        frames: this.anims.generateFrameNumbers('bikergirl', { start: 0, end: 3 }),
+        frames: this.anims.generateFrameNumbers('papergirl', { start: 0, end: 3 }),
         frameRate: 10,
         repeat: -1
       })
 
       this.anims.create({
         key: 'turn',
-        frames: [{ key: 'bikergirl', frame: 4 }],
+        frames: [{ key: 'papergirl', frame: 4 }],
         frameRate: 20
       })
 
       this.anims.create({
         key: 'right',
-        frames: this.anims.generateFrameNumbers('bikergirl', { start: 8, end: 12 }),
+        frames: this.anims.generateFrameNumbers('papergirl', { start: 8, end: 12 }),
         frameRate: 10,
         repeat: -1
       })
@@ -87,27 +88,27 @@
       roadmap.x = roadmap.x - .5;
 
       if (cursors.left.isDown) {
-        bikergirl.setVelocityX(-160);
+        papergirl.setVelocityX(-160);
 
-        bikergirl.anims.play('left', true);
+        papergirl.anims.play('left', true);
       }
 
 
       else if (cursors.right.isDown) {
-        bikergirl.setVelocityX(160);
+        papergirl.setVelocityX(160);
 
 
-        bikergirl.anims.play('right', true);
+        papergirl.anims.play('right', true);
       }
       else {
-        bikergirl.setVelocityX(0);
+        papergirl.setVelocityX(0);
 
-        bikergirl.anims.play('turn');
+        papergirl.anims.play('turn');
       }
 
 
-        if (cursors.up.isDown && bikergirl.body.touching.down) {
-          bikergirl.setVelocityY(-330);
+        if (cursors.up.isDown && papergirl.body.touching.down) {
+          papergirl.setVelocityY(-330);
         }
 
       
