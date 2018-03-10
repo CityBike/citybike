@@ -29,6 +29,7 @@
     };
 
     var papergirl;
+    var bluecar;
     var game = new Phaser.Game(config);
     var cursors;
     var frameNames;
@@ -36,18 +37,22 @@
     function preload() {
       this.load.image('roadmap', '../assets/TestRoadMapv1.png');
       this.load.atlas('papergirl', '../assets/papergirl.png', '../assets/papergirl.json')
-   
+      this.load.image('bluecar', '../assets/vehicles/carBlue2_006.png');
     }
 
     function create() {
-      this.add.image(1100, 0, 'roadmap');
+      this.add.image(700, 250, 'roadmap');
       // this.cameras.add(90000, 12200, 600, 800, true, 'moving');
       // this.cameras.main.x = -100;
       // this.cameras.main.y = 100;
       // var roadmap = this.add.displayList.list[0]
 
-      papergirl = this.add.sprite(150, 200, 'papergirl', 'fdddd_07.gif')
+      papergirl = this.add.sprite(150, 500, 'papergirl', 'fdddd_07.gif')
+      bluecar = this.physics.add.sprite(150, 500, 'bluecar');
+      // bluecar.disableBody(true,true);
+      console.log(this.add);
 
+      console.log('bluecar', bluecar);
       frameNames = this.anims.generateFrameNames('papergirl', {
         start: 3, end: 59, zeroPad: 2, prefix: 'fdddd_', suffix: '.gif'
       })
@@ -55,7 +60,6 @@
       leftFrames = this.anims.generateFrameNames('papergirl', {
         start: 3, end: 59, zeroPad: 2, prefix: 'fdddd_', suffix: '.gif'
       })
-
 
       // papergirl = this.physics.add.sprite(150, 200, 'papergirl')
       // papergirl.setBounce(0.2);
@@ -70,10 +74,9 @@
         repeat: -1
       })
 
-
-
       papergirl.anims.play('left')
 
+      // console.log(this.time.now);
 
       // this.anims.create({
       //   key: 'left',
@@ -95,15 +98,29 @@
       //   repeat: -1
       // })
 
+      // console.log(this.time);
+      // console.log('sprite', bluecar._events);
+      // console.log(this.time.addEvent);
     }
 
     function update() {
-
+      bluecar.setVelocityX(80);
+      bluecar.setVelocityY(-40);
       // this.cameras.main.x = this.cameras.main.x - 1;
       // this.cameras.main.y = this.cameras.main.y + 1;
       var roadmap = this.add.displayList.list[0];
-      roadmap.y = roadmap.y + .3;
+      roadmap.y = roadmap.y + .2;
       roadmap.x = roadmap.x - .5;
+      // console.log(this.time.now);
+
+      // console.log(this.time.now)
+      // console.log(this.time);
+
+      if (this.time.now == 1000) {
+        // bluecar = this.physics.add.sprite(150, 500, 'bluecar');
+        // bluecar.enableBody(true, true);
+        console.log('hi');
+      }
 
       // if (cursors.left.isDown) {
       //   papergirl.setVelocityX(-160);
