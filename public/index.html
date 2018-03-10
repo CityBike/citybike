@@ -69,6 +69,10 @@
       rightDiagonalFrames = this.anims.generateFrameNames('bikergirl', {
         start: 11, end: 18, zeroPad: 2, prefix: 'bikergirl_', suffix: '.gif'
       })
+      
+      // theCrash = this.anims.generateFrameNames('bikergirl', {
+      //   start: 51, end: 52, zeroPad: 2, prefix: 'bikergirl_', suffix: '.gif'
+      // })
 
       crashFrames = this.anims.generateFrameNames('bikergirl', {
         start: 33, end: 39, zeroPad: 2, prefix: 'bikergirl_', suffix: '.gif'
@@ -127,6 +131,13 @@
         repeat: -1
       })
 
+      //   this.anims.create({
+      //   key: 'theCrash',
+      //   frames: theCrash,
+      //   frameRate: 10,
+      //   repeat: -1
+      // })
+
       // console.log(this.time);
       // console.log('sprite', bluecar._events);
       // console.log(this.time.addEvent);
@@ -181,6 +192,7 @@
       console.log("crash")
       console.log("bikergirl.anims.play", bikergirl.anims.play)
       bikergirl.anims.play('crash', false);
+      // bikergirl.anims.play('theCrash', false);
       game.scene.keys.default.physics.pause()
       console.log("bikergirl", bikergirl.anims.animationManager.anims.entries.crash)
     
