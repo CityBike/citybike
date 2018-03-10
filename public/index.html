@@ -28,16 +28,17 @@
       }
     };
 
-    var papergirl;
-    var bluecar;
+    var bikergirl;
     var game = new Phaser.Game(config);
     var cursors;
+    var bluecar;
     var frameNames;
 
     function preload() {
       this.load.image('roadmap', '../assets/TestRoadMapv1.png');
-      this.load.atlas('papergirl', '../assets/papergirl.png', '../assets/papergirl.json')
+      this.load.atlas('bikergirl', '../assets/bikergirl.png', '../assets/bikergirl.json')
       this.load.image('bluecar', '../assets/vehicles/carBlue2_006.png');
+
     }
 
     function create() {
@@ -47,56 +48,85 @@
       // this.cameras.main.y = 100;
       // var roadmap = this.add.displayList.list[0]
 
-      papergirl = this.add.sprite(150, 500, 'papergirl', 'fdddd_07.gif')
+      bikergirl = this.physics.add.sprite(150, 500, 'bikergirl', 'bikergirl_07.gif')
       bluecar = this.physics.add.sprite(150, 500, 'bluecar');
+
       // bluecar.disableBody(true,true);
-      console.log(this.add);
+      function frameGenerator(sprite, start, end){
+        this.anims.generateFrameNames('bikergirl', {
+        start: 3, end: 59, zeroPad: 2, prefix: 'bikergirl_', suffix: '.gif'
+      })
+      }
 
-      console.log('bluecar', bluecar);
-      frameNames = this.anims.generateFrameNames('papergirl', {
-        start: 3, end: 59, zeroPad: 2, prefix: 'fdddd_', suffix: '.gif'
+      frameNames = this.anims.generateFrameNames('bikergirl', {
+        start: 3, end: 59, zeroPad: 2, prefix: 'bikergirl_', suffix: '.gif'
       })
 
-      leftFrames = this.anims.generateFrameNames('papergirl', {
-        start: 3, end: 59, zeroPad: 2, prefix: 'fdddd_', suffix: '.gif'
+      upFrames = this.anims.generateFrameNames('bikergirl', {
+        start: 3, end: 6, zeroPad: 2, prefix: 'bikergirl_', suffix: '.gif'
       })
 
-      // papergirl = this.physics.add.sprite(150, 200, 'papergirl')
-      // papergirl.setBounce(0.2);
-      // papergirl.setCollideWorldBounds(true);
+      leftFrames = this.anims.generateFrameNames('bikergirl', {
+        start: 21, end: 24, zeroPad: 2, prefix: 'flipped_bikergirl_', suffix: '.gif'
+      })
+
+      rightDiagonalFrames = this.anims.generateFrameNames('bikergirl', {
+        start: 11, end: 18, zeroPad: 2, prefix: 'bikergirl_', suffix: '.gif'
+      })
+
+      crashFrames = this.anims.generateFrameNames('bikergirl', {
+        start: 33, end: 39, zeroPad: 2, prefix: 'bikergirl_', suffix: '.gif'
+      })
+
+      finishFrames = this.anims.generateFrameNames('bikergirl', {
+        start: 58, end: 59, zeroPad: 2, prefix: 'bikergirl_', suffix: '.gif'
+        })
+
+      bikergirl.setBounce(0.2);
+      bikergirl.setCollideWorldBounds(true);
 
       cursors = this.input.keyboard.createCursorKeys();
 
        this.anims.create({
-        key: 'left',
+        key: 'right',
+        frames: rightDiagonalFrames,
+        frameRate: 10,
+        repeat: -1
+      })
+
+      this.anims.create({
+        key: 'all',
         frames: frameNames,
         frameRate: 10,
         repeat: -1
       })
 
-      papergirl.anims.play('left')
+      this.anims.create({
+        key: 'crash',
+        frames: crashFrames,
+        frameRate: 10,
+        repeat: -1
+      })
 
-      // console.log(this.time.now);
-
-      // this.anims.create({
-      //   key: 'left',
-      //   frames: this.anims.generateFrameNumbers('papergirl', { start: 0, end: 3 }),
-      //   frameRate: 10,
-      //   repeat: -1
-      // })
+      this.anims.create({
+        key: 'up',
+        frames: upFrames,
+        frameRate: 10,
+        repeat: -1
+      })
 
       // this.anims.create({
       //   key: 'turn',
-      //   frames: [{ key: 'papergirl', frame: 4 }],
+      //   frames: [{ key: 'bikergirl', frame: 4 }],
       //   frameRate: 20
       // })
 
-      // this.anims.create({
-      //   key: 'right',
-      //   frames: this.anims.generateFrameNumbers('papergirl', { start: 5, end: 8 }),
-      //   frameRate: 10,
-      //   repeat: -1
-      // })
+      this.anims.create({
+        key: 'left',
+        frames: leftFrames,
+        frameRate: 10,
+        repeat: -1
+      })
 
       // console.log(this.time);
       // console.log('sprite', bluecar._events);
@@ -104,8 +134,10 @@
     }
 
     function update() {
+
       bluecar.setVelocityX(80);
       bluecar.setVelocityY(-40);
+
       // this.cameras.main.x = this.cameras.main.x - 1;
       // this.cameras.main.y = this.cameras.main.y + 1;
       var roadmap = this.add.displayList.list[0];
@@ -122,26 +154,27 @@
         console.log('hi');
       }
 
-      // if (cursors.left.isDown) {
-      //   papergirl.setVelocityX(-160);
+      if (cursors.up.isDown) {
+        bikergirl.setVelocityY(-40);
+        bikergirl.anims.play('up', true);
+      }
 
-      //   papergirl.anims.play('left', true);
-      // }
+      else if (cursors.right.isDown){
+        bikergirl.setVelocityX(160)
+        bikergirl.anims.play('right', true)
+      }
 
+      else if (cursors.left.isDown) {
+        bikergirl.setVelocityX(-160);
+        bikergirl.anims.play('left', true);
+      }
 
-      // else if (cursors.right.isDown) {
-      //   papergirl.setVelocityX(160);
+      else if (cursors.down.isDown){
+        bikergirl.anims.play('crash', true);
+      }
 
-
-      //   papergirl.anims.play('right', true);
-      // }
-      // else {
-      //   papergirl.setVelocityX(0);
-
-      //   papergirl.anims.play('turn');
-      // }
-      // if (cursors.up.isDown && papergirl.body.touching.down) {
-      //   papergirl.setVelocityY(-330);
+      // if (cursors.up.isDown && bikergirl.body.touching.down) {
+      //   bikergirl.setVelocityY(-330);
       // }
     }
 

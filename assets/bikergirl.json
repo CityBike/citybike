@@ -1,0 +1,1973 @@
+{
+	"textures": [
+		{
+			"image": "bikergirl.png",
+			"format": "RGBA8888",
+			"size": {
+				"w": 256,
+				"h": 588
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "bikergirl_48.gif",
+					"frame": {
+						"x": 1,
+						"y": 1,
+						"w": 57,
+						"h": 23
+					},
+					"rotated": false,
+					"trimmed": true,
+					"spriteSourceSize": {
+						"x": 5,
+						"y": 22,
+						"w": 57,
+						"h": 23
+					},
+					"sourceSize": {
+						"w": 66,
+						"h": 48
+					}
+				},
+				{
+					"filename": "bikergirl_49.gif",
+					"frame": {
+						"x": 60,
+						"y": 1,
+						"w": 61,
+						"h": 23
+					},
+					"rotated": false,
+					"trimmed": true,
+					"spriteSourceSize": {
+						"x": 3,
+						"y": 22,
+						"w": 61,
+						"h": 23
+					},
+					"sourceSize": {
+						"w": 66,
+						"h": 48
+					}
+				},
+				{
+					"filename": "flipped_bikergirl_50.gif",
+					"frame": {
+						"x": 123,
+						"y": 1,
+						"w": 61,
+						"h": 23
+					},
+					"rotated": false,
+					"trimmed": true,
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 22,
+						"w": 61,
+						"h": 23
+					},
+					"sourceSize": {
+						"w": 66,
+						"h": 48
+					}
+				},
+				{
+					"filename": "flipped_bikergirl_51.gif",
+					"frame": {
+						"x": 186,
+						"y": 1,
+						"w": 57,
+						"h": 23
+					},
+					"rotated": false,
+					"trimmed": true,
+					"spriteSourceSize": {
+						"x": 4,
+						"y": 22,
+						"w": 57,
+						"h": 23
+					},
+					"sourceSize": {
+						"w": 66,
+						"h": 48
+					}
+				},
+				{
+					"filename": "bikergirl_42.gif",
+					"frame": {
+						"x": 1,
+						"y": 26,
+						"w": 45,
+						"h": 25
+					},
+					"rotated": false,
+					"trimmed": true,
+					"spriteSourceSize": {
+						"x": 3,
+						"y": 22,
+						"w": 45,
+						"h": 25
+					},
+					"sourceSize": {
+						"w": 52,
+						"h": 50
+					}
+				},
+				{
+					"filename": "flipped_bikergirl_45.gif",
+					"frame": {
+						"x": 48,
+						"y": 26,
+						"w": 45,
+						"h": 25
+					},
+					"rotated": false,
+					"trimmed": true,
+					"spriteSourceSize": {
+						"x": 4,
+						"y": 22,
+						"w": 45,
+						"h": 25
+					},
+					"sourceSize": {
+						"w": 52,
+						"h": 50
+					}
+				},
+				{
+					"filename": "bikergirl_43.gif",
+					"frame": {
+						"x": 95,
+						"y": 26,
+						"w": 54,
+						"h": 27
+					},
+					"rotated": false,
+					"trimmed": true,
+					"spriteSourceSize": {
+						"x": 7,
+						"y": 20,
+						"w": 54,
+						"h": 27
+					},
+					"sourceSize": {
+						"w": 64,
+						"h": 50
+					}
+				},
+				{
+					"filename": "flipped_bikergirl_44.gif",
+					"frame": {
+						"x": 151,
+						"y": 26,
+						"w": 54,
+						"h": 27
+					},
+					"rotated": false,
+					"trimmed": true,
+					"spriteSourceSize": {
+						"x": 3,
+						"y": 20,
+						"w": 54,
+						"h": 27
+					},
+					"sourceSize": {
+						"w": 64,
+						"h": 50
+					}
+				},
+				{
+					"filename": "bikergirl_41.gif",
+					"frame": {
+						"x": 207,
+						"y": 26,
+						"w": 43,
+						"h": 32
+					},
+					"rotated": false,
+					"trimmed": true,
+					"spriteSourceSize": {
+						"x": 3,
+						"y": 15,
+						"w": 43,
+						"h": 32
+					},
+					"sourceSize": {
+						"w": 48,
+						"h": 50
+					}
+				},
+				{
+					"filename": "bikergirl_35.gif",
+					"frame": {
+						"x": 1,
+						"y": 53,
+						"w": 69,
+						"h": 32
+					},
+					"rotated": false,
+					"trimmed": true,
+					"spriteSourceSize": {
+						"x": 9,
+						"y": 29,
+						"w": 69,
+						"h": 32
+					},
+					"sourceSize": {
+						"w": 82,
+						"h": 62
+					}
+				},
+				{
+					"filename": "bikergirl_47.gif",
+					"frame": {
+						"x": 72,
+						"y": 55,
+						"w": 55,
+						"h": 32
+					},
+					"rotated": false,
+					"trimmed": true,
+					"spriteSourceSize": {
+						"x": 5,
+						"y": 13,
+						"w": 55,
+						"h": 32
+					},
+					"sourceSize": {
+						"w": 64,
+						"h": 48
+					}
+				},
+				{
+					"filename": "flipped_bikergirl_37.gif",
+					"frame": {
+						"x": 129,
+						"y": 55,
+						"w": 69,
+						"h": 32
+					},
+					"rotated": false,
+					"trimmed": true,
+					"spriteSourceSize": {
+						"x": 4,
+						"y": 29,
+						"w": 69,
+						"h": 32
+					},
+					"sourceSize": {
+						"w": 82,
+						"h": 62
+					}
+				},
+				{
+					"filename": "flipped_bikergirl_46.gif",
+					"frame": {
+						"x": 200,
+						"y": 60,
+						"w": 43,
+						"h": 32
+					},
+					"rotated": false,
+					"trimmed": true,
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 15,
+						"w": 43,
+						"h": 32
+					},
+					"sourceSize": {
+						"w": 48,
+						"h": 50
+					}
+				},
+				{
+					"filename": "flipped_bikergirl_52.gif",
+					"frame": {
+						"x": 1,
+						"y": 87,
+						"w": 55,
+						"h": 32
+					},
+					"rotated": false,
+					"trimmed": true,
+					"spriteSourceSize": {
+						"x": 4,
+						"y": 13,
+						"w": 55,
+						"h": 32
+					},
+					"sourceSize": {
+						"w": 64,
+						"h": 48
+					}
+				},
+				{
+					"filename": "bikergirl_34.gif",
+					"frame": {
+						"x": 58,
+						"y": 89,
+						"w": 61,
+						"h": 37
+					},
+					"rotated": false,
+					"trimmed": true,
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 24,
+						"w": 61,
+						"h": 37
+					},
+					"sourceSize": {
+						"w": 64,
+						"h": 62
+					}
+				},
+				{
+					"filename": "bikergirl_46.gif",
+					"frame": {
+						"x": 121,
+						"y": 89,
+						"w": 47,
+						"h": 37
+					},
+					"rotated": false,
+					"trimmed": true,
+					"spriteSourceSize": {
+						"x": 8,
+						"y": 8,
+						"w": 47,
+						"h": 37
+					},
+					"sourceSize": {
+						"w": 59,
+						"h": 48
+					}
+				},
+				{
+					"filename": "bikergirl_58.gif",
+					"frame": {
+						"x": 170,
+						"y": 89,
+						"w": 27,
+						"h": 41
+					},
+					"rotated": false,
+					"trimmed": true,
+					"spriteSourceSize": {
+						"x": 7,
+						"y": 0,
+						"w": 27,
+						"h": 41
+					},
+					"sourceSize": {
+						"w": 37,
+						"h": 43
+					}
+				},
+				{
+					"filename": "flipped_bikergirl_53.gif",
+					"frame": {
+						"x": 199,
+						"y": 94,
+						"w": 47,
+						"h": 37
+					},
+					"rotated": false,
+					"trimmed": true,
+					"spriteSourceSize": {
+						"x": 4,
+						"y": 8,
+						"w": 47,
+						"h": 37
+					},
+					"sourceSize": {
+						"w": 59,
+						"h": 48
+					}
+				},
+				{
+					"filename": "bikergirl_40.gif",
+					"frame": {
+						"x": 1,
+						"y": 121,
+						"w": 42,
+						"h": 38
+					},
+					"rotated": false,
+					"trimmed": true,
+					"spriteSourceSize": {
+						"x": 3,
+						"y": 9,
+						"w": 42,
+						"h": 38
+					},
+					"sourceSize": {
+						"w": 48,
+						"h": 50
+					}
+				},
+				{
+					"filename": "flipped_bikergirl_38.gif",
+					"frame": {
+						"x": 45,
+						"y": 128,
+						"w": 61,
+						"h": 37
+					},
+					"rotated": false,
+					"trimmed": true,
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 24,
+						"w": 61,
+						"h": 37
+					},
+					"sourceSize": {
+						"w": 64,
+						"h": 62
+					}
+				},
+				{
+					"filename": "flipped_bikergirl_47.gif",
+					"frame": {
+						"x": 108,
+						"y": 128,
+						"w": 42,
+						"h": 38
+					},
+					"rotated": false,
+					"trimmed": true,
+					"spriteSourceSize": {
+						"x": 3,
+						"y": 9,
+						"w": 42,
+						"h": 38
+					},
+					"sourceSize": {
+						"w": 48,
+						"h": 50
+					}
+				},
+				{
+					"filename": "flipped_bikergirl_17.png",
+					"frame": {
+						"x": 152,
+						"y": 128,
+						"w": 16,
+						"h": 41
+					},
+					"rotated": false,
+					"trimmed": false,
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 16,
+						"h": 41
+					},
+					"sourceSize": {
+						"w": 16,
+						"h": 41
+					}
+				},
+				{
+					"filename": "bikergirl_19.gif",
+					"frame": {
+						"x": 170,
+						"y": 133,
+						"w": 35,
+						"h": 40
+					},
+					"rotated": false,
+					"trimmed": true,
+					"spriteSourceSize": {
+						"x": 5,
+						"y": 5,
+						"w": 35,
+						"h": 40
+					},
+					"sourceSize": {
+						"w": 43,
+						"h": 48
+					}
+				},
+				{
+					"filename": "bikergirl_20.gif",
+					"frame": {
+						"x": 207,
+						"y": 133,
+						"w": 35,
+						"h": 40
+					},
+					"rotated": false,
+					"trimmed": true,
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 5,
+						"w": 35,
+						"h": 40
+					},
+					"sourceSize": {
+						"w": 40,
+						"h": 48
+					}
+				},
+				{
+					"filename": "bikergirl_21.gif",
+					"frame": {
+						"x": 1,
+						"y": 161,
+						"w": 35,
+						"h": 40
+					},
+					"rotated": false,
+					"trimmed": true,
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 5,
+						"w": 35,
+						"h": 40
+					},
+					"sourceSize": {
+						"w": 39,
+						"h": 48
+					}
+				},
+				{
+					"filename": "flipped_bikergirl_22.gif",
+					"frame": {
+						"x": 38,
+						"y": 167,
+						"w": 35,
+						"h": 40
+					},
+					"rotated": false,
+					"trimmed": true,
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 5,
+						"w": 35,
+						"h": 40
+					},
+					"sourceSize": {
+						"w": 39,
+						"h": 48
+					}
+				},
+				{
+					"filename": "bikergirl_14.gif",
+					"frame": {
+						"x": 75,
+						"y": 167,
+						"w": 31,
+						"h": 41
+					},
+					"rotated": false,
+					"trimmed": true,
+					"spriteSourceSize": {
+						"x": 5,
+						"y": 3,
+						"w": 31,
+						"h": 41
+					},
+					"sourceSize": {
+						"w": 38,
+						"h": 47
+					}
+				},
+				{
+					"filename": "flipped_bikergirl_23.gif",
+					"frame": {
+						"x": 108,
+						"y": 168,
+						"w": 35,
+						"h": 40
+					},
+					"rotated": false,
+					"trimmed": true,
+					"spriteSourceSize": {
+						"x": 3,
+						"y": 5,
+						"w": 35,
+						"h": 40
+					},
+					"sourceSize": {
+						"w": 40,
+						"h": 48
+					}
+				},
+				{
+					"filename": "bikergirl_03.gif",
+					"frame": {
+						"x": 145,
+						"y": 171,
+						"w": 18,
+						"h": 42
+					},
+					"rotated": false,
+					"trimmed": true,
+					"spriteSourceSize": {
+						"x": 5,
+						"y": 2,
+						"w": 18,
+						"h": 42
+					},
+					"sourceSize": {
+						"w": 25,
+						"h": 47
+					}
+				},
+				{
+					"filename": "flipped_bikergirl_24.gif",
+					"frame": {
+						"x": 165,
+						"y": 175,
+						"w": 35,
+						"h": 40
+					},
+					"rotated": false,
+					"trimmed": true,
+					"spriteSourceSize": {
+						"x": 3,
+						"y": 5,
+						"w": 35,
+						"h": 40
+					},
+					"sourceSize": {
+						"w": 43,
+						"h": 48
+					}
+				},
+				{
+					"filename": "bikergirl_12.gif",
+					"frame": {
+						"x": 202,
+						"y": 175,
+						"w": 32,
+						"h": 41
+					},
+					"rotated": false,
+					"trimmed": true,
+					"spriteSourceSize": {
+						"x": 5,
+						"y": 3,
+						"w": 32,
+						"h": 41
+					},
+					"sourceSize": {
+						"w": 38,
+						"h": 47
+					}
+				},
+				{
+					"filename": "bikergirl_04.gif",
+					"frame": {
+						"x": 236,
+						"y": 175,
+						"w": 18,
+						"h": 42
+					},
+					"rotated": false,
+					"trimmed": true,
+					"spriteSourceSize": {
+						"x": 4,
+						"y": 2,
+						"w": 18,
+						"h": 42
+					},
+					"sourceSize": {
+						"w": 24,
+						"h": 47
+					}
+				},
+				{
+					"filename": "bikergirl_13.gif",
+					"frame": {
+						"x": 1,
+						"y": 203,
+						"w": 32,
+						"h": 41
+					},
+					"rotated": false,
+					"trimmed": true,
+					"spriteSourceSize": {
+						"x": 7,
+						"y": 3,
+						"w": 32,
+						"h": 41
+					},
+					"sourceSize": {
+						"w": 42,
+						"h": 47
+					}
+				},
+				{
+					"filename": "bikergirl_22.gif",
+					"frame": {
+						"x": 35,
+						"y": 209,
+						"w": 35,
+						"h": 41
+					},
+					"rotated": false,
+					"trimmed": true,
+					"spriteSourceSize": {
+						"x": 3,
+						"y": 4,
+						"w": 35,
+						"h": 41
+					},
+					"sourceSize": {
+						"w": 42,
+						"h": 48
+					}
+				},
+				{
+					"filename": "bikergirl_28.gif",
+					"frame": {
+						"x": 72,
+						"y": 210,
+						"w": 32,
+						"h": 41
+					},
+					"rotated": false,
+					"trimmed": true,
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 4,
+						"w": 32,
+						"h": 41
+					},
+					"sourceSize": {
+						"w": 39,
+						"h": 48
+					}
+				},
+				{
+					"filename": "bikergirl_29.gif",
+					"frame": {
+						"x": 106,
+						"y": 210,
+						"w": 34,
+						"h": 41
+					},
+					"rotated": false,
+					"trimmed": true,
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 4,
+						"w": 34,
+						"h": 41
+					},
+					"sourceSize": {
+						"w": 39,
+						"h": 48
+					}
+				},
+				{
+					"filename": "bikergirl_05.gif",
+					"frame": {
+						"x": 142,
+						"y": 215,
+						"w": 18,
+						"h": 42
+					},
+					"rotated": false,
+					"trimmed": true,
+					"spriteSourceSize": {
+						"x": 4,
+						"y": 2,
+						"w": 18,
+						"h": 42
+					},
+					"sourceSize": {
+						"w": 23,
+						"h": 47
+					}
+				},
+				{
+					"filename": "bikergirl_30.gif",
+					"frame": {
+						"x": 162,
+						"y": 217,
+						"w": 32,
+						"h": 41
+					},
+					"rotated": false,
+					"trimmed": true,
+					"spriteSourceSize": {
+						"x": 3,
+						"y": 4,
+						"w": 32,
+						"h": 41
+					},
+					"sourceSize": {
+						"w": 37,
+						"h": 48
+					}
+				},
+				{
+					"filename": "bikergirl_59.png",
+					"frame": {
+						"x": 196,
+						"y": 218,
+						"w": 27,
+						"h": 41
+					},
+					"rotated": false,
+					"trimmed": true,
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 0,
+						"w": 27,
+						"h": 41
+					},
+					"sourceSize": {
+						"w": 32,
+						"h": 43
+					}
+				},
+				{
+					"filename": "flipped_bikergirl_63.png",
+					"frame": {
+						"x": 225,
+						"y": 219,
+						"w": 27,
+						"h": 41
+					},
+					"rotated": false,
+					"trimmed": true,
+					"spriteSourceSize": {
+						"x": 3,
+						"y": 0,
+						"w": 27,
+						"h": 41
+					},
+					"sourceSize": {
+						"w": 32,
+						"h": 43
+					}
+				},
+				{
+					"filename": "flipped_bikergirl_03.gif",
+					"frame": {
+						"x": 1,
+						"y": 246,
+						"w": 31,
+						"h": 41
+					},
+					"rotated": false,
+					"trimmed": true,
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 3,
+						"w": 31,
+						"h": 41
+					},
+					"sourceSize": {
+						"w": 38,
+						"h": 47
+					}
+				},
+				{
+					"filename": "flipped_bikergirl_04.gif",
+					"frame": {
+						"x": 34,
+						"y": 252,
+						"w": 32,
+						"h": 41
+					},
+					"rotated": false,
+					"trimmed": true,
+					"spriteSourceSize": {
+						"x": 3,
+						"y": 3,
+						"w": 32,
+						"h": 41
+					},
+					"sourceSize": {
+						"w": 42,
+						"h": 47
+					}
+				},
+				{
+					"filename": "bikergirl_51.gif",
+					"frame": {
+						"x": 68,
+						"y": 253,
+						"w": 50,
+						"h": 41
+					},
+					"rotated": false,
+					"trimmed": true,
+					"spriteSourceSize": {
+						"x": 5,
+						"y": 4,
+						"w": 50,
+						"h": 41
+					},
+					"sourceSize": {
+						"w": 59,
+						"h": 45
+					}
+				},
+				{
+					"filename": "bikergirl_06.gif",
+					"frame": {
+						"x": 120,
+						"y": 253,
+						"w": 18,
+						"h": 42
+					},
+					"rotated": false,
+					"trimmed": true,
+					"spriteSourceSize": {
+						"x": 5,
+						"y": 2,
+						"w": 18,
+						"h": 42
+					},
+					"sourceSize": {
+						"w": 27,
+						"h": 47
+					}
+				},
+				{
+					"filename": "bikergirl_07.gif",
+					"frame": {
+						"x": 140,
+						"y": 259,
+						"w": 20,
+						"h": 42
+					},
+					"rotated": false,
+					"trimmed": true,
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 2,
+						"w": 20,
+						"h": 42
+					},
+					"sourceSize": {
+						"w": 28,
+						"h": 47
+					}
+				},
+				{
+					"filename": "flipped_bikergirl_05.gif",
+					"frame": {
+						"x": 162,
+						"y": 260,
+						"w": 32,
+						"h": 41
+					},
+					"rotated": false,
+					"trimmed": true,
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 3,
+						"w": 32,
+						"h": 41
+					},
+					"sourceSize": {
+						"w": 38,
+						"h": 47
+					}
+				},
+				{
+					"filename": "flipped_bikergirl_64.gif",
+					"frame": {
+						"x": 196,
+						"y": 261,
+						"w": 27,
+						"h": 41
+					},
+					"rotated": false,
+					"trimmed": true,
+					"spriteSourceSize": {
+						"x": 3,
+						"y": 0,
+						"w": 27,
+						"h": 41
+					},
+					"sourceSize": {
+						"w": 37,
+						"h": 43
+					}
+				},
+				{
+					"filename": "bikergirl_08.gif",
+					"frame": {
+						"x": 225,
+						"y": 262,
+						"w": 20,
+						"h": 42
+					},
+					"rotated": false,
+					"trimmed": true,
+					"spriteSourceSize": {
+						"x": 6,
+						"y": 2,
+						"w": 20,
+						"h": 42
+					},
+					"sourceSize": {
+						"w": 29,
+						"h": 47
+					}
+				},
+				{
+					"filename": "bikergirl_09.gif",
+					"frame": {
+						"x": 1,
+						"y": 289,
+						"w": 20,
+						"h": 42
+					},
+					"rotated": false,
+					"trimmed": true,
+					"spriteSourceSize": {
+						"x": 9,
+						"y": 2,
+						"w": 20,
+						"h": 42
+					},
+					"sourceSize": {
+						"w": 29,
+						"h": 47
+					}
+				},
+				{
+					"filename": "flipped_bikergirl_21.gif",
+					"frame": {
+						"x": 23,
+						"y": 295,
+						"w": 35,
+						"h": 41
+					},
+					"rotated": false,
+					"trimmed": true,
+					"spriteSourceSize": {
+						"x": 4,
+						"y": 4,
+						"w": 35,
+						"h": 41
+					},
+					"sourceSize": {
+						"w": 42,
+						"h": 48
+					}
+				},
+				{
+					"filename": "bikergirl_52.gif",
+					"frame": {
+						"x": 60,
+						"y": 296,
+						"w": 52,
+						"h": 41
+					},
+					"rotated": false,
+					"trimmed": true,
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 4,
+						"w": 52,
+						"h": 41
+					},
+					"sourceSize": {
+						"w": 61,
+						"h": 45
+					}
+				},
+				{
+					"filename": "bikergirl_10.gif",
+					"frame": {
+						"x": 114,
+						"y": 297,
+						"w": 21,
+						"h": 42
+					},
+					"rotated": false,
+					"trimmed": true,
+					"spriteSourceSize": {
+						"x": 12,
+						"y": 2,
+						"w": 21,
+						"h": 42
+					},
+					"sourceSize": {
+						"w": 37,
+						"h": 47
+					}
+				},
+				{
+					"filename": "bikergirl_53.gif",
+					"frame": {
+						"x": 137,
+						"y": 303,
+						"w": 50,
+						"h": 41
+					},
+					"rotated": false,
+					"trimmed": true,
+					"spriteSourceSize": {
+						"x": 5,
+						"y": 4,
+						"w": 50,
+						"h": 41
+					},
+					"sourceSize": {
+						"w": 57,
+						"h": 45
+					}
+				},
+				{
+					"filename": "flipped_bikergirl_29.gif",
+					"frame": {
+						"x": 189,
+						"y": 304,
+						"w": 32,
+						"h": 41
+					},
+					"rotated": false,
+					"trimmed": true,
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 4,
+						"w": 32,
+						"h": 41
+					},
+					"sourceSize": {
+						"w": 37,
+						"h": 48
+					}
+				},
+				{
+					"filename": "flipped_bikergirl_31.gif",
+					"frame": {
+						"x": 223,
+						"y": 306,
+						"w": 32,
+						"h": 41
+					},
+					"rotated": false,
+					"trimmed": true,
+					"spriteSourceSize": {
+						"x": 6,
+						"y": 4,
+						"w": 32,
+						"h": 41
+					},
+					"sourceSize": {
+						"w": 39,
+						"h": 48
+					}
+				},
+				{
+					"filename": "bikergirl_24.gif",
+					"frame": {
+						"x": 1,
+						"y": 333,
+						"w": 20,
+						"h": 42
+					},
+					"rotated": false,
+					"trimmed": true,
+					"spriteSourceSize": {
+						"x": 5,
+						"y": 3,
+						"w": 20,
+						"h": 42
+					},
+					"sourceSize": {
+						"w": 30,
+						"h": 48
+					}
+				},
+				{
+					"filename": "flipped_bikergirl_30.gif",
+					"frame": {
+						"x": 23,
+						"y": 338,
+						"w": 34,
+						"h": 41
+					},
+					"rotated": false,
+					"trimmed": true,
+					"spriteSourceSize": {
+						"x": 3,
+						"y": 4,
+						"w": 34,
+						"h": 41
+					},
+					"sourceSize": {
+						"w": 39,
+						"h": 48
+					}
+				},
+				{
+					"filename": "bikergirl_54.gif",
+					"frame": {
+						"x": 59,
+						"y": 339,
+						"w": 50,
+						"h": 41
+					},
+					"rotated": false,
+					"trimmed": true,
+					"spriteSourceSize": {
+						"x": 4,
+						"y": 4,
+						"w": 50,
+						"h": 41
+					},
+					"sourceSize": {
+						"w": 57,
+						"h": 45
+					}
+				},
+				{
+					"filename": "bikergirl_26.gif",
+					"frame": {
+						"x": 111,
+						"y": 341,
+						"w": 20,
+						"h": 42
+					},
+					"rotated": false,
+					"trimmed": true,
+					"spriteSourceSize": {
+						"x": 4,
+						"y": 3,
+						"w": 20,
+						"h": 42
+					},
+					"sourceSize": {
+						"w": 30,
+						"h": 48
+					}
+				},
+				{
+					"filename": "bikergirl_11.gif",
+					"frame": {
+						"x": 133,
+						"y": 346,
+						"w": 31,
+						"h": 42
+					},
+					"rotated": false,
+					"trimmed": true,
+					"spriteSourceSize": {
+						"x": 7,
+						"y": 2,
+						"w": 31,
+						"h": 42
+					},
+					"sourceSize": {
+						"w": 42,
+						"h": 47
+					}
+				},
+				{
+					"filename": "flipped_bikergirl_07.gif",
+					"frame": {
+						"x": 166,
+						"y": 346,
+						"w": 21,
+						"h": 42
+					},
+					"rotated": false,
+					"trimmed": true,
+					"spriteSourceSize": {
+						"x": 4,
+						"y": 2,
+						"w": 21,
+						"h": 42
+					},
+					"sourceSize": {
+						"w": 37,
+						"h": 47
+					}
+				},
+				{
+					"filename": "bikergirl_16.gif",
+					"frame": {
+						"x": 189,
+						"y": 347,
+						"w": 28,
+						"h": 42
+					},
+					"rotated": false,
+					"trimmed": true,
+					"spriteSourceSize": {
+						"x": 5,
+						"y": 3,
+						"w": 28,
+						"h": 42
+					},
+					"sourceSize": {
+						"w": 37,
+						"h": 48
+					}
+				},
+				{
+					"filename": "bikergirl_18.gif",
+					"frame": {
+						"x": 219,
+						"y": 349,
+						"w": 28,
+						"h": 42
+					},
+					"rotated": false,
+					"trimmed": true,
+					"spriteSourceSize": {
+						"x": 8,
+						"y": 3,
+						"w": 28,
+						"h": 42
+					},
+					"sourceSize": {
+						"w": 43,
+						"h": 48
+					}
+				},
+				{
+					"filename": "flipped_bikergirl_08.gif",
+					"frame": {
+						"x": 1,
+						"y": 377,
+						"w": 20,
+						"h": 42
+					},
+					"rotated": false,
+					"trimmed": true,
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 2,
+						"w": 20,
+						"h": 42
+					},
+					"sourceSize": {
+						"w": 29,
+						"h": 47
+					}
+				},
+				{
+					"filename": "bikergirl_25.gif",
+					"frame": {
+						"x": 23,
+						"y": 381,
+						"w": 27,
+						"h": 42
+					},
+					"rotated": false,
+					"trimmed": true,
+					"spriteSourceSize": {
+						"x": 7,
+						"y": 3,
+						"w": 27,
+						"h": 42
+					},
+					"sourceSize": {
+						"w": 35,
+						"h": 48
+					}
+				},
+				{
+					"filename": "bikergirl_55.gif",
+					"frame": {
+						"x": 52,
+						"y": 382,
+						"w": 56,
+						"h": 41
+					},
+					"rotated": false,
+					"trimmed": true,
+					"spriteSourceSize": {
+						"x": 3,
+						"y": 4,
+						"w": 56,
+						"h": 41
+					},
+					"sourceSize": {
+						"w": 62,
+						"h": 45
+					}
+				},
+				{
+					"filename": "flipped_bikergirl_09.gif",
+					"frame": {
+						"x": 110,
+						"y": 385,
+						"w": 20,
+						"h": 42
+					},
+					"rotated": false,
+					"trimmed": true,
+					"spriteSourceSize": {
+						"x": 3,
+						"y": 2,
+						"w": 20,
+						"h": 42
+					},
+					"sourceSize": {
+						"w": 29,
+						"h": 47
+					}
+				},
+				{
+					"filename": "bikergirl_27.gif",
+					"frame": {
+						"x": 132,
+						"y": 390,
+						"w": 24,
+						"h": 42
+					},
+					"rotated": false,
+					"trimmed": true,
+					"spriteSourceSize": {
+						"x": 6,
+						"y": 3,
+						"w": 24,
+						"h": 42
+					},
+					"sourceSize": {
+						"w": 37,
+						"h": 48
+					}
+				},
+				{
+					"filename": "flipped_bikergirl_10.gif",
+					"frame": {
+						"x": 158,
+						"y": 390,
+						"w": 20,
+						"h": 42
+					},
+					"rotated": false,
+					"trimmed": true,
+					"spriteSourceSize": {
+						"x": 6,
+						"y": 2,
+						"w": 20,
+						"h": 42
+					},
+					"sourceSize": {
+						"w": 28,
+						"h": 47
+					}
+				},
+				{
+					"filename": "bikergirl_39.gif",
+					"frame": {
+						"x": 180,
+						"y": 391,
+						"w": 33,
+						"h": 42
+					},
+					"rotated": false,
+					"trimmed": true,
+					"spriteSourceSize": {
+						"x": 5,
+						"y": 5,
+						"w": 33,
+						"h": 42
+					},
+					"sourceSize": {
+						"w": 42,
+						"h": 50
+					}
+				},
+				{
+					"filename": "bikergirl_45.gif",
+					"frame": {
+						"x": 215,
+						"y": 393,
+						"w": 38,
+						"h": 42
+					},
+					"rotated": false,
+					"trimmed": true,
+					"spriteSourceSize": {
+						"x": 5,
+						"y": 3,
+						"w": 38,
+						"h": 42
+					},
+					"sourceSize": {
+						"w": 45,
+						"h": 48
+					}
+				},
+				{
+					"filename": "flipped_bikergirl_11.gif",
+					"frame": {
+						"x": 1,
+						"y": 421,
+						"w": 18,
+						"h": 42
+					},
+					"rotated": false,
+					"trimmed": true,
+					"spriteSourceSize": {
+						"x": 4,
+						"y": 2,
+						"w": 18,
+						"h": 42
+					},
+					"sourceSize": {
+						"w": 27,
+						"h": 47
+					}
+				},
+				{
+					"filename": "flipped_bikergirl_06.gif",
+					"frame": {
+						"x": 21,
+						"y": 425,
+						"w": 31,
+						"h": 42
+					},
+					"rotated": false,
+					"trimmed": true,
+					"spriteSourceSize": {
+						"x": 4,
+						"y": 2,
+						"w": 31,
+						"h": 42
+					},
+					"sourceSize": {
+						"w": 42,
+						"h": 47
+					}
+				},
+				{
+					"filename": "flipped_bikergirl_12.gif",
+					"frame": {
+						"x": 54,
+						"y": 425,
+						"w": 18,
+						"h": 42
+					},
+					"rotated": false,
+					"trimmed": true,
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 2,
+						"w": 18,
+						"h": 42
+					},
+					"sourceSize": {
+						"w": 23,
+						"h": 47
+					}
+				},
+				{
+					"filename": "flipped_bikergirl_13.gif",
+					"frame": {
+						"x": 74,
+						"y": 425,
+						"w": 18,
+						"h": 42
+					},
+					"rotated": false,
+					"trimmed": true,
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 2,
+						"w": 18,
+						"h": 42
+					},
+					"sourceSize": {
+						"w": 24,
+						"h": 47
+					}
+				},
+				{
+					"filename": "flipped_bikergirl_25.gif",
+					"frame": {
+						"x": 94,
+						"y": 429,
+						"w": 28,
+						"h": 42
+					},
+					"rotated": false,
+					"trimmed": true,
+					"spriteSourceSize": {
+						"x": 7,
+						"y": 3,
+						"w": 28,
+						"h": 42
+					},
+					"sourceSize": {
+						"w": 43,
+						"h": 48
+					}
+				},
+				{
+					"filename": "flipped_bikergirl_27.gif",
+					"frame": {
+						"x": 124,
+						"y": 434,
+						"w": 28,
+						"h": 42
+					},
+					"rotated": false,
+					"trimmed": true,
+					"spriteSourceSize": {
+						"x": 4,
+						"y": 3,
+						"w": 28,
+						"h": 42
+					},
+					"sourceSize": {
+						"w": 37,
+						"h": 48
+					}
+				},
+				{
+					"filename": "flipped_bikergirl_32.gif",
+					"frame": {
+						"x": 154,
+						"y": 434,
+						"w": 24,
+						"h": 42
+					},
+					"rotated": false,
+					"trimmed": true,
+					"spriteSourceSize": {
+						"x": 7,
+						"y": 3,
+						"w": 24,
+						"h": 42
+					},
+					"sourceSize": {
+						"w": 37,
+						"h": 48
+					}
+				},
+				{
+					"filename": "flipped_bikergirl_33.gif",
+					"frame": {
+						"x": 180,
+						"y": 435,
+						"w": 20,
+						"h": 42
+					},
+					"rotated": false,
+					"trimmed": true,
+					"spriteSourceSize": {
+						"x": 6,
+						"y": 3,
+						"w": 20,
+						"h": 42
+					},
+					"sourceSize": {
+						"w": 30,
+						"h": 48
+					}
+				},
+				{
+					"filename": "flipped_bikergirl_34.gif",
+					"frame": {
+						"x": 202,
+						"y": 437,
+						"w": 27,
+						"h": 42
+					},
+					"rotated": false,
+					"trimmed": true,
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 3,
+						"w": 27,
+						"h": 42
+					},
+					"sourceSize": {
+						"w": 35,
+						"h": 48
+					}
+				},
+				{
+					"filename": "flipped_bikergirl_35.gif",
+					"frame": {
+						"x": 231,
+						"y": 437,
+						"w": 20,
+						"h": 42
+					},
+					"rotated": false,
+					"trimmed": true,
+					"spriteSourceSize": {
+						"x": 5,
+						"y": 3,
+						"w": 20,
+						"h": 42
+					},
+					"sourceSize": {
+						"w": 30,
+						"h": 48
+					}
+				},
+				{
+					"filename": "flipped_bikergirl_48.gif",
+					"frame": {
+						"x": 1,
+						"y": 469,
+						"w": 33,
+						"h": 42
+					},
+					"rotated": false,
+					"trimmed": true,
+					"spriteSourceSize": {
+						"x": 4,
+						"y": 5,
+						"w": 33,
+						"h": 42
+					},
+					"sourceSize": {
+						"w": 42,
+						"h": 50
+					}
+				},
+				{
+					"filename": "flipped_bikergirl_54.gif",
+					"frame": {
+						"x": 36,
+						"y": 469,
+						"w": 38,
+						"h": 42
+					},
+					"rotated": false,
+					"trimmed": true,
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 3,
+						"w": 38,
+						"h": 42
+					},
+					"sourceSize": {
+						"w": 45,
+						"h": 48
+					}
+				},
+				{
+					"filename": "bikergirl_17.gif",
+					"frame": {
+						"x": 76,
+						"y": 473,
+						"w": 28,
+						"h": 43
+					},
+					"rotated": false,
+					"trimmed": true,
+					"spriteSourceSize": {
+						"x": 8,
+						"y": 2,
+						"w": 28,
+						"h": 43
+					},
+					"sourceSize": {
+						"w": 40,
+						"h": 48
+					}
+				},
+				{
+					"filename": "bikergirl_31.gif",
+					"frame": {
+						"x": 106,
+						"y": 478,
+						"w": 31,
+						"h": 43
+					},
+					"rotated": false,
+					"trimmed": true,
+					"spriteSourceSize": {
+						"x": 6,
+						"y": 2,
+						"w": 31,
+						"h": 43
+					},
+					"sourceSize": {
+						"w": 37,
+						"h": 48
+					}
+				},
+				{
+					"filename": "flipped_bikergirl_26.gif",
+					"frame": {
+						"x": 139,
+						"y": 478,
+						"w": 28,
+						"h": 43
+					},
+					"rotated": false,
+					"trimmed": true,
+					"spriteSourceSize": {
+						"x": 4,
+						"y": 2,
+						"w": 28,
+						"h": 43
+					},
+					"sourceSize": {
+						"w": 40,
+						"h": 48
+					}
+				},
+				{
+					"filename": "flipped_bikergirl_28.gif",
+					"frame": {
+						"x": 169,
+						"y": 479,
+						"w": 31,
+						"h": 43
+					},
+					"rotated": false,
+					"trimmed": true,
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 2,
+						"w": 31,
+						"h": 43
+					},
+					"sourceSize": {
+						"w": 37,
+						"h": 48
+					}
+				},
+				{
+					"filename": "bikergirl_37.gif",
+					"frame": {
+						"x": 202,
+						"y": 481,
+						"w": 37,
+						"h": 46
+					},
+					"rotated": false,
+					"trimmed": true,
+					"spriteSourceSize": {
+						"x": 5,
+						"y": 3,
+						"w": 37,
+						"h": 46
+					},
+					"sourceSize": {
+						"w": 45,
+						"h": 50
+					}
+				},
+				{
+					"filename": "bikergirl_38.gif",
+					"frame": {
+						"x": 1,
+						"y": 513,
+						"w": 41,
+						"h": 46
+					},
+					"rotated": false,
+					"trimmed": true,
+					"spriteSourceSize": {
+						"x": 8,
+						"y": 3,
+						"w": 41,
+						"h": 46
+					},
+					"sourceSize": {
+						"w": 50,
+						"h": 50
+					}
+				},
+				{
+					"filename": "flipped_bikergirl_41.gif",
+					"frame": {
+						"x": 44,
+						"y": 518,
+						"w": 41,
+						"h": 46
+					},
+					"rotated": false,
+					"trimmed": true,
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 3,
+						"w": 41,
+						"h": 46
+					},
+					"sourceSize": {
+						"w": 50,
+						"h": 50
+					}
+				},
+				{
+					"filename": "flipped_bikergirl_42.gif",
+					"frame": {
+						"x": 87,
+						"y": 523,
+						"w": 37,
+						"h": 46
+					},
+					"rotated": false,
+					"trimmed": true,
+					"spriteSourceSize": {
+						"x": 3,
+						"y": 3,
+						"w": 37,
+						"h": 46
+					},
+					"sourceSize": {
+						"w": 45,
+						"h": 50
+					}
+				},
+				{
+					"filename": "bikergirl_33.gif",
+					"frame": {
+						"x": 126,
+						"y": 524,
+						"w": 50,
+						"h": 58
+					},
+					"rotated": false,
+					"trimmed": true,
+					"spriteSourceSize": {
+						"x": 6,
+						"y": 3,
+						"w": 50,
+						"h": 58
+					},
+					"sourceSize": {
+						"w": 61,
+						"h": 62
+					}
+				},
+				{
+					"filename": "flipped_bikergirl_39.gif",
+					"frame": {
+						"x": 178,
+						"y": 529,
+						"w": 50,
+						"h": 58
+					},
+					"rotated": false,
+					"trimmed": true,
+					"spriteSourceSize": {
+						"x": 5,
+						"y": 3,
+						"w": 50,
+						"h": 58
+					},
+					"sourceSize": {
+						"w": 61,
+						"h": 62
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "https://www.codeandweb.com/texturepacker",
+		"version": "3.0",
+		"smartupdate": "$TexturePacker:SmartUpdate:45559f65b60085bf26f81107d68051c1:a2a73721e82ccd4f9dc4a17195f751d0:192e921071a0ce5e413959bb15219afc$"
+	}
+}
