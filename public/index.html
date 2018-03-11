@@ -73,12 +73,8 @@
         start: 11, end: 18, zeroPad: 2, prefix: 'bikergirl_', suffix: '.gif'
       })
 
-      theCrash = this.anims.generateFrameNames('bikergirl', {
-        start: 51, end: 52, zeroPad: 2, prefix: 'bikergirl_', suffix: '.gif'
-      })
-
       crashFrames = this.anims.generateFrameNames('bikergirl', {
-        start: 32, end: 39, zeroPad: 2, prefix: 'bikergirl_', suffix: '.gif'
+        start: 32, end: 35, zeroPad: 2, prefix: 'bikergirl_', suffix: '.gif'
       })
 
       finishFrames = this.anims.generateFrameNames('bikergirl', {
@@ -114,8 +110,9 @@
       this.anims.create({
         key: 'crash',
         frames: crashFrames,
-        frameRate: 10,
-        repeat: -1
+        frameRate: 5,
+        // msPerFrame: 10000,
+        repeat: 0
       })
 
       this.anims.create({
@@ -141,14 +138,16 @@
         }
       );
 
-      this.anims.create({
-        key: 'theCrash',
-        frames: theCrash,
-        frameRate: 10,
-        repeat: -1
-      })
+      // this.anims.create({
+      //   key: 'theCrash',
+      //   frames: theCrash,
+      //   frameRate: 10,
+      //   repeat: -1
+      // })
+    console.log(this.anims)
 
     }
+
 
     function update() {
 
@@ -193,6 +192,18 @@
       crashed = true
       bikergirl.anims.play('crash', true);
       game.scene.keys.default.physics.pause()
+      game.scene.keys.default.time.addEvent({
+        delay: 1000,
+        callback: function(){
+          console.log(game.scene.keys.default)
+          game.scene.keys.default.physics.resume()
+          crashed = false
+          bikergirl.anims.resume()
+          bikergirl.anims.play("up", true)
+          
+        }
+      })
+      console.log(crashed)
     }
 
 
