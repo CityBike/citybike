@@ -34,6 +34,8 @@
     var bluecar;
     var frameNames;
     var crashed = false;
+    var gameScene;
+    var carCollider;
 
 
 
@@ -52,7 +54,7 @@
       // this.cameras.main.x = -100;
       // this.cameras.main.y = 100;
       // var roadmap = this.add.displayList.list[0]
-      
+
 
       bikergirl = this.physics.add.sprite(150, 400, 'bikergirl', 'bikergirl_07.gif')
       bluecar = this.physics.add.sprite(200, 100, 'bluecar');
@@ -83,7 +85,7 @@
         start: 58, end: 59, zeroPad: 2, prefix: 'bikergirl_', suffix: '.gif'
       })
 
-      this.physics.add.collider(bluecar, bikergirl, crash, null, this)
+      carCollider = this.physics.add.collider(bluecar, bikergirl, crash, null, this)
 
       bikergirl.setBounce(0.2);
       bikergirl.setCollideWorldBounds(true);
@@ -180,18 +182,18 @@
       bikergirl.anims.pause()
       crashed = true
       bikergirl.anims.play('crash', true);
-      game.sound.play('bodyFallAudio')
+      gameScene = game.scene.keys.default;
+      // game.sound.play('bodyFallAudio')
       // game.sound.play('crashAudio');
-      game.scene.keys.default.physics.pause()
-      game.scene.keys.default.time.addEvent({
+      gameScene.physics.pause()
+      gameScene.time.addEvent({
         delay: 1000,
         callback: function(){
-          console.log(game.scene.keys.default)
           game.scene.keys.default.physics.resume()
           crashed = false
           bikergirl.anims.resume()
           bikergirl.anims.play("up", true)
-          
+          gameScene.physics.world.removeCollider(carCollider);
         }
       })
     }
