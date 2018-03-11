@@ -33,6 +33,7 @@
     var cursors;
     var bluecar;
     var frameNames;
+    var crashed = false;
 
 
 
@@ -70,9 +71,9 @@
         start: 11, end: 18, zeroPad: 2, prefix: 'bikergirl_', suffix: '.gif'
       })
       
-      // theCrash = this.anims.generateFrameNames('bikergirl', {
-      //   start: 51, end: 52, zeroPad: 2, prefix: 'bikergirl_', suffix: '.gif'
-      // })
+      theCrash = this.anims.generateFrameNames('bikergirl', {
+        start: 51, end: 52, zeroPad: 2, prefix: 'bikergirl_', suffix: '.gif'
+      })
 
       crashFrames = this.anims.generateFrameNames('bikergirl', {
         start: 33, end: 39, zeroPad: 2, prefix: 'bikergirl_', suffix: '.gif'
@@ -157,7 +158,8 @@
 
       // console.log(this.time.now)
       // console.log(this.time);
-
+      
+      if (crashed === false){
       if (this.time.now == 1000) {
         // bluecar = this.physics.add.sprite(150, 500, 'bluecar');
         // bluecar.enableBody(true, true);
@@ -182,16 +184,21 @@
       else if (cursors.down.isDown) {
         bikergirl.anims.play('crash', true);
       }
-
+      
+      }
+      
       // if (cursors.up.isDown && bikergirl.body.touching.down) {
       //   bikergirl.setVelocityY(-330);
       // }
     }
 
     function crash(){
+      bikergirl.anims.pause()
+      crashed = true
       console.log("crash")
-      console.log("bikergirl.anims.play", bikergirl.anims.play)
-      bikergirl.anims.play('crash', false);
+      // game.scene.keys.default.input.disable(cursors)
+      console.log("this.input", game.scene.keys.default.input)
+      bikergirl.anims.play('crash', true);
       // bikergirl.anims.play('theCrash', false);
       game.scene.keys.default.physics.pause()
       console.log("bikergirl", bikergirl.anims.animationManager.anims.entries.crash)
