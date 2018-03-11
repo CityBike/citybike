@@ -892,7 +892,7 @@
 					}
 				},
 				{
-					"filename": "bikergirl_51.gif",
+					"filename": "bikergirl_32.gif",
 					"frame": {
 						"x": 68,
 						"y": 253,
@@ -1968,6 +1968,6 @@
 	"meta": {
 		"app": "https://www.codeandweb.com/texturepacker",
 		"version": "3.0",
-		"smartupdate": "$TexturePacker:SmartUpdate:45559f65b60085bf26f81107d68051c1:a2a73721e82ccd4f9dc4a17195f751d0:192e921071a0ce5e413959bb15219afc$"
+		"smartupdate": "$TexturePacker:SmartUpdate:8d2cabdf933009ce7f4685b9afcce5cf:a8d3493220664027a1ca6a52a186444b:192e921071a0ce5e413959bb15219afc$"
 	}
 }
