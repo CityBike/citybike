@@ -42,6 +42,7 @@
     }
 
     function create() {
+
       this.add.image(700, 250, 'roadmap');
       // this.cameras.add(90000, 12200, 600, 800, true, 'moving');
       // this.cameras.main.x = -100;
@@ -49,9 +50,9 @@
       // var roadmap = this.add.displayList.list[0]
 
       bikergirl = this.physics.add.sprite(150, 500, 'bikergirl', 'bikergirl_07.gif')
-      bluecar = this.physics.add.sprite(150, 500, 'bluecar');
+      bluecar = this.physics.add.sprite(200, 100, 'bluecar');
 
-      // bluecar.disableBody(true,true);
+      bluecar.disableBody(true,true);
       function frameGenerator(sprite, start, end){
         this.anims.generateFrameNames('bikergirl', {
         start: 3, end: 59, zeroPad: 2, prefix: 'bikergirl_', suffix: '.gif'
@@ -128,9 +129,14 @@
         repeat: -1
       })
 
-      // console.log(this.time);
-      // console.log('sprite', bluecar._events);
-      // console.log(this.time.addEvent);
+      this.time.addEvent(
+        {
+          delay: 1000,
+          callback: function() {
+            bluecar.enableBody(true, 50, 600, true, true)
+          }
+        }
+      );
     }
 
     function update() {
@@ -138,21 +144,13 @@
       bluecar.setVelocityX(80);
       bluecar.setVelocityY(-40);
 
+      bluecar.enableBody(false, true)
+
       // this.cameras.main.x = this.cameras.main.x - 1;
       // this.cameras.main.y = this.cameras.main.y + 1;
       var roadmap = this.add.displayList.list[0];
       roadmap.y = roadmap.y + .2;
       roadmap.x = roadmap.x - .5;
-      // console.log(this.time.now);
-
-      // console.log(this.time.now)
-      // console.log(this.time);
-
-      if (this.time.now == 1000) {
-        // bluecar = this.physics.add.sprite(150, 500, 'bluecar');
-        // bluecar.enableBody(true, true);
-        console.log('hi');
-      }
 
       if (cursors.up.isDown) {
         bikergirl.setVelocityY(-40);
