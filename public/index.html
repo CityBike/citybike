@@ -35,41 +35,51 @@
     var bluecar;
     var frameNames;
     var crashed = false;
-    var gameScene;
     var carCollider;
     var manCollider;
+    var score = 0;
+    var scoreText;
+    var finishLine;
+    
 
     function preload() {
-      this.load.image('roadmap', '../assets/TestRoadMapv1.png');
+      this.load.image('roadmap', '../assets/TestRoadMapv5_compressed.png');
+      this.load.image('finishLine', '../assets/FinishLine.png');
+      // this.load.image('prettyBikes', '../assets/prettybikes.jpg')
       this.load.atlas('bikergirl', '../assets/bikergirl.png', '../assets/bikergirl.json')
       this.load.atlas('businessMan', '../assets/businessMan.png', '../assets/businessMan.json')
       this.load.image('bluecar', '../assets/vehicles/carBlue2_006.png');
       this.load.image('taxi', '../assets/vehicles/taxi_SW.png');
+      this.load.image('upGarbageTruck', '../assets/vehicles/taxi_SW.png')
       this.load.audio('crashAudio', '../assets/qubodup-crash.ogg');
       this.load.audio('bodyFallAudio', '../assets/fall.wav');
+
+
     }
 
     function create() {
 
-      this.add.image(700, 250, 'roadmap');
-      // this.cameras.add(90000, 12200, 600, 800, true, 'moving');
-      // this.cameras.main.x = -100;
-      // this.cameras.main.y = 100;
-      // var roadmap = this.add.displayList.list[0]
+      this.add.image(800, 200, 'roadmap');
 
-
+      scoreText = this.add.text(16, 16, 'score: 0', { fontSize: '32px', fill: '#000' });
       bikergirl = this.physics.add.sprite(150, 400, 'bikergirl', 'bikergirl_07.gif')
       bluecar = this.physics.add.sprite(200, 100, 'bluecar');
-      taxi = this.physics.add.sprite(300, 100, 'taxi');
+      taxi = this.physics.add.sprite(1000, 0, 'taxi');
+      bluecar2 = this.physics.add.sprite(1000, 0, 'bluecar');
+      upGarbageTruck = this.physics.add.sprite(1000, 0, 'upGarbageTruck');
       businessMan = this.physics.add.sprite(200, 400, 'businessMan', 'business_guy_01.gif')
+      finishLine = this.physics.add.sprite(0,0, 'finishLine')
 
       bluecar.crashed = false
       taxi.crashed = false
       businessMan.crashed = false
 
-
-
       bluecar.disableBody(true, true);
+      taxi.disableBody(true, true)
+      bluecar2.disableBody(true, true);
+      upGarbageTruck.disableBody(true, true);
+      finishLine.disableBody(true, true)
+
 
       manWalkingFrames = this.anims.generateFrameNames('businessMan', {
         start: 1, end: 7, zeroPad: 2, prefix: 'business_guy_', suffix: '.gif'
@@ -103,16 +113,19 @@
         start: 50, end: 54, zeroPad: 2, prefix: 'bikergirl_', suffix: '.gif'
       })
 
-      finishFrames = this.anims.generateFrameNames('bikergirl', {
+      victoryFrames = this.anims.generateFrameNames('bikergirl', {
         start: 58, end: 59, zeroPad: 2, prefix: 'bikergirl_', suffix: '.gif'
       })
 
       manCollider = this.physics.add.collider(businessMan, bikergirl, smack, null, this)
-      carCollider = this.physics.add.collider(bluecar, bikergirl, crash, null, this)
-      taxiCollider = this.physics.add.collider(taxi, bikergirl, crash, null, this)
+      carCollider = this.physics.add.collider(bluecar, bikergirl, blueCarCrash, null, this)
+      taxiCollider = this.physics.add.collider(taxi, bikergirl, taxiCrash, null, this)
+      finishCollider = this.physics.add.collider(finishLine, bikergirl, victory, null, this)
+
 
       bikergirl.setBounce(0.2);
       bikergirl.setCollideWorldBounds(true);
+    
 
       cursors = this.input.keyboard.createCursorKeys();
 
@@ -130,6 +143,7 @@
         repeat: -1
       })
 
+     
       this.anims.create({
         key: 'crash',
         frames: crashFrames,
@@ -165,6 +179,14 @@
         repeat: 0
       })
 
+      this.anims.create({
+        key: 'victory',
+        frames: victoryFrames,
+        frameRate: 5,
+        repeat: 0
+      })
+      
+
       this.time.addEvent(
         {
           delay: 1000,
@@ -173,14 +195,56 @@
           }
         }
       );
+
+      this.time.addEvent(
+        {
+          delay: 5000,
+          callback: function () {
+            taxi.enableBody(true, 1000, 0, true, true)
+          }
+        }
+      );
+
+      this.time.addEvent(
+        {
+          delay: 8000,
+          callback: function () {
+            bluecar2.enableBody(true, 1200, 0, true, true)
+          }
+        }
+      );
+
+      this.time.addEvent(
+        {
+          delay: 14000,
+          callback: function () {
+            upGarbageTruck.enableBody(true, 50, 600, true, true)
+          }
+        }
+      );
+
+      this.time.addEvent(
+        {
+          delay: 2000,
+          callback: function () {
+            finishLine.enableBody(true, 1000, 0, true, true)
+          }
+        }
+      )
+
+
+
+
+      bikergirl.anims.play("right")
+      businessMan.anims.play("walk")
     }
 
 
     function update() {
 
       bluecar.enableBody(false, true)
-
-      businessMan.anims.play("walk")
+      score += 1;
+      scoreText.setText('Score: ' + score);
 
       if (!businessMan.crashed) {
         businessMan.setVelocityX(30);
@@ -193,27 +257,22 @@
       if (!bluecar.crashed) {
         bluecar.setVelocityX(80);
         bluecar.setVelocityY(-40);
-
       } else {
         bluecar.setVelocityX(-40);
         bluecar.setVelocityY(20);
       }
 
        if (!taxi.crashed) {
-        taxi.setVelocityX(120);
-        taxi.setVelocityY(-60);
-
+        taxi.setVelocityX(-120);
+        taxi.setVelocityY(60);
       } else {
         taxi.setVelocityX(-40);
         taxi.setVelocityY(20);
       }
 
-      // this.cameras.main.x = this.cameras.main.x - 1;
-      // this.cameras.main.y = this.cameras.main.y + 1;
       var roadmap = this.add.displayList.list[0];
 
       if (crashed === false) {
-
         roadmap.y = roadmap.y + .2;
         roadmap.x = roadmap.x - .5;
 
@@ -221,25 +280,24 @@
           bikergirl.setVelocityY(-40);
           bikergirl.anims.play('up', true);
         }
-
         else if (cursors.right.isDown) {
           bikergirl.setVelocityX(160)
           bikergirl.anims.play('right', true)
         }
-
         else if (cursors.left.isDown) {
           bikergirl.setVelocityX(-160);
           bikergirl.anims.play('left', true);
         }
 
         else if (cursors.down.isDown) {
-          // businessMan.anims.play('smack', true);
+          bikergirl.anims.play('victory', true)
         }
       }
 
     }
 
-    function crash(vehicle) {
+    function blueCarCrash() {
+      score -= 50;
       bikergirl.anims.pause()
       crashed = true
       bikergirl.anims.play('crash', true);
@@ -252,7 +310,7 @@
         callback: function () {
           gameScene.physics.resume()
           crashed = false
-          vehicle.crashed = true
+          bluecar.crashed = true
           bikergirl.anims.resume()
           bikergirl.anims.play('right', true)
           businessMan.anims.resume()
@@ -261,13 +319,36 @@
       })
     }
 
+    function taxiCrash() {
+      score -= 50;
+      bikergirl.anims.pause()
+      crashed = true
+      bikergirl.anims.play('crash', true);
+      game.sound.play('crashAudio');
+      businessMan.anims.pause()
+      gameScene = game.scene.keys.default
+      gameScene.physics.pause()
+      gameScene.time.addEvent({
+        delay: 1000,
+        callback: function () {
+          gameScene.physics.resume()
+          crashed = false
+          taxi.crashed = true
+          bikergirl.anims.resume()
+          bikergirl.anims.play('right', true)
+          businessMan.anims.resume()
+          gameScene.physics.world.removeCollider(taxiCollider);
+        }
+      })
+    }
+
     function smack() {
+      score -= 50
       bikergirl.anims.pause()
       businessMan.anims.pause()
       crashed = true
       bikergirl.anims.play('crash', true);
       businessMan.anims.play('smack', true);
-
       game.sound.play('bodyFallAudio')
       gameScene = game.scene.keys.default
       gameScene.physics.pause()
@@ -282,6 +363,10 @@
           gameScene.physics.world.removeCollider(manCollider);
         }
       })
+    }
+
+    function victory(){
+      bikergirl.anims.play('victory', true);
     }
 
 
