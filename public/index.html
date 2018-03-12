@@ -205,55 +205,64 @@
         {
           delay: 1000,
           callback: function () {
-            bluecar.enableBody(true, 50, 2000, true, true)
+            bluecar.enableBody(true, 50, 600, true, true) // GOOD!
+          }
+        }
+      );
+
+       this.time.addEvent(
+        {
+          delay: 2000,
+          callback: function () {
+            redcarDown.enableBody(true, 1500, 0, true, true) // GOOD!
           }
         }
       );
 
       this.time.addEvent(
         {
-          delay: 8000,
+          delay: 5000,
           callback: function () {
-            redcarUp.enableBody(true, 1500, 0, true, true)
+            redcarUp.enableBody(true, 50, 575, true, true) // GOOD!
           }
         }
       );
 
-      // this.time.addEvent(
-      //   {
-      //     delay: 14000,
-      //     callback: function () {
-      //       redcarDown.enableBody(true, 50, 600, true, true)
-      //     }
-      //   }
-      // );
+      this.time.addEvent(
+        {
+          delay: 10000,
+          callback: function () {
+            redcarDown.enableBody(true, 50, 600, true, true) // GOOD!
+          }
+        }
+      );
 
         this.time.addEvent(
         {
-          delay: 14000,
+          delay: 4000,
           callback: function () {
-            taxiDown.enableBody(true, 50, 600, true, true)
+            taxiDown.enableBody(true, 1500, 0, true, true) // GOOD!
           }
         }
       );
 
       this.time.addEvent(
         {
-          delay: 12000,
+          delay: 10000,
           callback: function () {
-            garbageTruckUp.enableBody(true, 1500, 0, true, true)  // GOOD!
+            garbageTruckUp.enableBody(true, 50, 575, true, true) // GOOD!
           }
         }
       );
 
-      // this.time.addEvent(
-      //   {
-      //     delay: 15000,
-      //     callback: function () {
-      //       garbageTruckDown.enableBody(true, 1500, 0, true, true)
-      //     }
-      //   }
-      // );
+      this.time.addEvent(
+        {
+          delay: 7000,
+          callback: function () {
+            garbageTruckDown.enableBody(true, 1500, 0, true, true) // GOOD!
+          }
+        }
+      );
 
       this.time.addEvent(
         {
@@ -281,7 +290,6 @@
 
     function update() {
 
-      bluecar.enableBody(false, true)
       score += 1;
       scoreText.setText('Score: ' + score);
      
@@ -295,16 +303,16 @@
       }
 
       if (!bluecar.crashed) {
-        bluecar.setVelocityX(80);
-        bluecar.setVelocityY(-40);
+        bluecar.setVelocityX(120);
+        bluecar.setVelocityY(-60);
       } else {
         bluecar.setVelocityX(-60);
         bluecar.setVelocityY(30);
       }
 
         if (!redcarUp.crashed) {
-        redcarUp.setVelocityX(80);
-        redcarUp.setVelocityY(-40);
+        redcarUp.setVelocityX(120);
+        redcarUp.setVelocityY(-60);
       } else {
         redcarUp.setVelocityX(-60);
         redcarUp.setVelocityY(30);
