@@ -40,12 +40,13 @@
     var score = 0;
     var scoreText;
     var finishLine;
-    var nearFinishLine;
+    var roadmap;
+    // var nearFinishLine;
 
 
     function preload() {
       this.load.image('roadmap', '../assets/TestRoadMapv5_compressed.png');
-      this.load.image('finishLine', '../assets/FinishLinev2.png');
+      // this.load.image('finishLine', '../assets/FinishLinev2.png');
       // this.load.image('prettyBikes', '../assets/prettybikes.jpg')
       this.load.atlas('bikergirl', '../assets/bikergirl.png', '../assets/bikergirl.json')
       this.load.atlas('businessMan', '../assets/businessMan.png', '../assets/businessMan.json')
@@ -55,12 +56,18 @@
       this.load.audio('crashAudio', '../assets/qubodup-crash.ogg');
       this.load.audio('bodyFallAudio', '../assets/fall.wav');
 
-
     }
 
     function create() {
+      console.log(this.add.graphics);
 
-      this.add.image(800, 200, 'roadmap');
+      roadmap = this.add.image(800, 200, 'roadmap');
+      finishZone = this.add.zone(1000, 1000, 800, 800)
+      finishZone.setRectangleDropZone(1000, 1000);
+      console.log(this.add.zone);
+      console.log('zone', finishZone)
+      console.log('bounds', finishZone.getBottomLeft())
+
 
       scoreText = this.add.text(16, 16, 'score: 0', { fontSize: '32px', fill: '#000' });
       bikergirl = this.physics.add.sprite(150, 400, 'bikergirl', 'bikergirl_07.gif')
@@ -69,7 +76,7 @@
       bluecar2 = this.physics.add.sprite(1000, 0, 'bluecar');
       upGarbageTruck = this.physics.add.sprite(1000, 0, 'upGarbageTruck');
       businessMan = this.physics.add.sprite(200, 400, 'businessMan', 'business_guy_01.gif')
-      finishLine = this.physics.add.sprite(0,0, 'finishLine')
+      // finishLine = this.physics.add.sprite(0,0, 'finishLine')
 
       bluecar.crashed = false
       taxi.crashed = false
@@ -79,7 +86,7 @@
       taxi.disableBody(true, true)
       bluecar2.disableBody(true, true);
       upGarbageTruck.disableBody(true, true);
-      finishLine.disableBody(true, true)
+      // finishLine.disableBody(true, true)
 
 
       manWalkingFrames = this.anims.generateFrameNames('businessMan', {
@@ -121,7 +128,7 @@
       manCollider = this.physics.add.collider(businessMan, bikergirl, smack, null, this)
       carCollider = this.physics.add.collider(bluecar, bikergirl, blueCarCrash, null, this)
       taxiCollider = this.physics.add.collider(taxi, bikergirl, taxiCrash, null, this)
-      finishCollider = this.physics.add.collider(finishLine, bikergirl, victory, null, this)
+      finishCollider = this.physics.add.collider(finishZone, bikergirl, victory, null, this)
 
 
       bikergirl.setBounce(0.2);
@@ -224,15 +231,16 @@
         }
       );
 
-      this.time.addEvent(
-        {
-          delay: 3000,
-          callback: function () {
-            nearFinishLine = true;
-            finishLine.enableBody(true, 1000, 0, true, true)
-          }
-        }
-      )
+    //   this.time.addEvent(
+    //     {
+    //       delay: 3000,
+    //       callback: function () {
+    //         nearFinishLine = true;
+    //         finishLine.enableBody(true, 1000, 0, true, true)
+    //       }
+    //     }
+
+    // )
 
 
 
@@ -243,12 +251,18 @@
 
 
     function update() {
-
+      console.log(roadmap.x, roadmap.y)
+      console.log(bikergirl)
       bluecar.enableBody(false, true)
       score += 1;
+      if (bikergirl.x > finishZone.getBottomLeft().x) {
+        victory();
+      }
+      console.log(finishZone);
       scoreText.setText('Score: ' + score);
       businessMan.setVelocityX(30);
       businessMan.setVelocityY(-15);
+      console.log('bounds', finishZone.getBottomLeft())
 
       if (!businessMan.crashed) {
         businessMan.setVelocityX(30);
@@ -274,8 +288,8 @@
         taxi.setVelocityY(20);
       }
 
-      var roadmap = this.add.displayList.list[0];
-      console.log(roadmap.x, roadmap.y)
+      // var roadmap = this.add.displayList.list[0];
+      // console.log(roadmap.x, roadmap.y)
       if (crashed === false) {
         roadmap.y = roadmap.y + .2;
         roadmap.x = roadmap.x - .4;
