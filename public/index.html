@@ -18,7 +18,6 @@
         default: 'arcade',
         arcade: {
           gravity: { y: 0 }
-          // debug: false
         }
       },
       scene: {
@@ -63,15 +62,15 @@
       this.add.image(800, 50, 'roadmap');
 
       scoreText = this.add.text(16, 16, 'score: 0', { fontSize: '32px', fill: '#000' });
-      bikergirl = this.physics.add.sprite(150, 400, 'bikergirl', 'bikergirl_07.gif')
+      bikergirl = this.physics.add.sprite(150, 700, 'bikergirl', 'bikergirl_07.gif')
       bluecar = this.physics.add.sprite(200, 100, 'bluecar');
       redcarUp = this.physics.add.sprite(200, 100, 'redcarUp');
       redcarDown = this.physics.add.sprite(200, 100, 'redcarDown');
       taxiDown = this.physics.add.sprite(1000, 0, 'taxiDown');
       garbageTruckUp = this.physics.add.sprite(1000, 0, 'garbageTruckUp');
       garbageTruckDown = this.physics.add.sprite(1000, 0, 'garbageTruckDown');
-      businessMan = this.physics.add.sprite(200, 400, 'businessMan', 'business_guy_01.gif')
-      finishLine = this.physics.add.sprite(0,0, 'finishLine')
+      businessMan = this.physics.add.sprite(725, 500, 'businessMan', 'business_guy_01.gif')
+      // finishLine = this.physics.add.sprite(0,0, 'finishLine')
 
       bluecar.crashed = false
       redcarUp.crashed = false
@@ -86,7 +85,7 @@
       taxiDown.disableBody(true, true)
       garbageTruckUp.disableBody(true, true)
       garbageTruckDown.disableBody(true, true)
-      finishLine.disableBody(true, true)
+      // finishLine.disableBody(true, true)
 
 
       manWalkingFrames = this.anims.generateFrameNames('businessMan', {
@@ -206,7 +205,7 @@
         {
           delay: 1000,
           callback: function () {
-            bluecar.enableBody(true, 50, 600, true, true)
+            bluecar.enableBody(true, 50, 2000, true, true)
           }
         }
       );
@@ -215,19 +214,19 @@
         {
           delay: 8000,
           callback: function () {
-            redcarUp.enableBody(true, 1200, 0, true, true)
+            redcarUp.enableBody(true, 1500, 0, true, true)
           }
         }
       );
 
-      this.time.addEvent(
-        {
-          delay: 14000,
-          callback: function () {
-            redcarDown.enableBody(true, 50, 600, true, true)
-          }
-        }
-      );
+      // this.time.addEvent(
+      //   {
+      //     delay: 14000,
+      //     callback: function () {
+      //       redcarDown.enableBody(true, 50, 600, true, true)
+      //     }
+      //   }
+      // );
 
         this.time.addEvent(
         {
@@ -240,18 +239,27 @@
 
       this.time.addEvent(
         {
-          delay: 5000,
+          delay: 12000,
           callback: function () {
-            garbageTruckUp.enableBody(true, 1000, 0, true, true)
+            garbageTruckUp.enableBody(true, 1500, 0, true, true)  // GOOD!
           }
         }
       );
 
+      // this.time.addEvent(
+      //   {
+      //     delay: 15000,
+      //     callback: function () {
+      //       garbageTruckDown.enableBody(true, 1500, 0, true, true)
+      //     }
+      //   }
+      // );
+
       this.time.addEvent(
         {
-          delay: 5000,
+          delay: 2000,
           callback: function () {
-            garbageTruckDown.enableBody(true, 1000, 0, true, true)
+            redcarDown.enableBody(true, 1500, 0, true, true)
           }
         }
       );
@@ -276,70 +284,69 @@
       bluecar.enableBody(false, true)
       score += 1;
       scoreText.setText('Score: ' + score);
-      businessMan.setVelocityX(30);
-      businessMan.setVelocityY(-15);
+     
 
       if (!businessMan.crashed) {
-        businessMan.setVelocityX(30);
-        businessMan.setVelocityY(-15);
+        businessMan.setVelocityX(1);
+        businessMan.setVelocityY(-.5);
       } else {
-        businessMan.setVelocityX(-30);
-        businessMan.setVelocityY(15);
+        businessMan.setVelocityX(-60);
+        businessMan.setVelocityY(30);
       }
 
       if (!bluecar.crashed) {
         bluecar.setVelocityX(80);
         bluecar.setVelocityY(-40);
       } else {
-        bluecar.setVelocityX(-40);
-        bluecar.setVelocityY(20);
+        bluecar.setVelocityX(-60);
+        bluecar.setVelocityY(30);
       }
 
         if (!redcarUp.crashed) {
-        redcarUp.setVelocityX(-120);
-        redcarUp.setVelocityY(60);
+        redcarUp.setVelocityX(80);
+        redcarUp.setVelocityY(-40);
       } else {
-        redcarUp.setVelocityX(-40);
-        redcarUp.setVelocityY(20);
+        redcarUp.setVelocityX(-60);
+        redcarUp.setVelocityY(30);
       }
 
         if (!redcarDown.crashed) {
         redcarDown.setVelocityX(-120);
         redcarDown.setVelocityY(60);
       } else {
-        redcarDown.setVelocityX(-40);
-        redcarDown.setVelocityY(20);
+        redcarDown.setVelocityX(-60);
+        redcarDown.setVelocityY(30);
       }
 
        if (!taxiDown.crashed) {
         taxiDown.setVelocityX(-120);
         taxiDown.setVelocityY(60);
       } else {
-        taxiDown.setVelocityX(-40);
-        taxiDown.setVelocityY(20);
+        taxiDown.setVelocityX(-60);
+        taxiDown.setVelocityY(30);
       }
 
        if (!garbageTruckUp.crashed) {
-        garbageTruckUp.setVelocityX(-120);
-        garbageTruckUp.setVelocityY(60);
+        garbageTruckUp.setVelocityX(80);
+        garbageTruckUp.setVelocityY(-40);
       } else {
-        garbageTruckUp.setVelocityX(-40);
-        garbageTruckUp.setVelocityY(20);
+        garbageTruckUp.setVelocityX(-60);
+        garbageTruckUp.setVelocityY(30);
       }
 
       if (!garbageTruckDown.crashed) {
         garbageTruckDown.setVelocityX(-120);
         garbageTruckDown.setVelocityY(60);
       } else {
-        garbageTruckDown.setVelocityX(-40);
-        garbageTruckDown.setVelocityY(20);
+        garbageTruckDown.setVelocityX(-60);
+        garbageTruckDown.setVelocityY(30);
       }
 
       var roadmap = this.add.displayList.list[0];
       console.log(roadmap.x, roadmap.y)
       if (crashed === false) {
-        roadmap.y = roadmap.y + .2;
-        roadmap.x = roadmap.x - .4;
+        roadmap.y = roadmap.y + .6;
+        roadmap.x = roadmap.x - 1.2;
 
         if (cursors.up.isDown) {
           bikergirl.setVelocityY(-40);
