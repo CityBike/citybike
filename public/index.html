@@ -40,11 +40,12 @@
     var score = 0;
     var scoreText;
     var finishLine;
-    
+    var nearFinishLine;
+
 
     function preload() {
       this.load.image('roadmap', '../assets/TestRoadMapv5_compressed.png');
-      this.load.image('finishLine', '../assets/FinishLine.png');
+      this.load.image('finishLine', '../assets/FinishLinev2.png');
       // this.load.image('prettyBikes', '../assets/prettybikes.jpg')
       this.load.atlas('bikergirl', '../assets/bikergirl.png', '../assets/bikergirl.json')
       this.load.atlas('businessMan', '../assets/businessMan.png', '../assets/businessMan.json')
@@ -125,7 +126,7 @@
 
       bikergirl.setBounce(0.2);
       bikergirl.setCollideWorldBounds(true);
-    
+
 
       cursors = this.input.keyboard.createCursorKeys();
 
@@ -143,7 +144,7 @@
         repeat: -1
       })
 
-     
+
       this.anims.create({
         key: 'crash',
         frames: crashFrames,
@@ -185,7 +186,7 @@
         frameRate: 5,
         repeat: 0
       })
-      
+
 
       this.time.addEvent(
         {
@@ -225,8 +226,9 @@
 
       this.time.addEvent(
         {
-          delay: 2000,
+          delay: 3000,
           callback: function () {
+            nearFinishLine = true;
             finishLine.enableBody(true, 1000, 0, true, true)
           }
         }
@@ -245,6 +247,8 @@
       bluecar.enableBody(false, true)
       score += 1;
       scoreText.setText('Score: ' + score);
+      businessMan.setVelocityX(30);
+      businessMan.setVelocityY(-15);
 
       if (!businessMan.crashed) {
         businessMan.setVelocityX(30);
@@ -271,10 +275,10 @@
       }
 
       var roadmap = this.add.displayList.list[0];
-
+      console.log(roadmap.x, roadmap.y)
       if (crashed === false) {
         roadmap.y = roadmap.y + .2;
-        roadmap.x = roadmap.x - .5;
+        roadmap.x = roadmap.x - .4;
 
         if (cursors.up.isDown) {
           bikergirl.setVelocityY(-40);
@@ -367,6 +371,7 @@
 
     function victory(){
       bikergirl.anims.play('victory', true);
+      hitsFinishLine = true;
     }
 
 
