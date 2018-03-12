@@ -72,7 +72,7 @@
       taxiDown = this.physics.add.sprite(1000, 0, 'taxiDown');
       garbageTruckUp = this.physics.add.sprite(1000, 0, 'garbageTruckUp');
       garbageTruckDown = this.physics.add.sprite(1000, 0, 'garbageTruckDown');
-      businessMan = this.physics.add.sprite(725, 500, 'businessMan', 'business_guy_01.gif')
+      businessMan = this.physics.add.sprite(225, 400, 'businessMan', 'business_guy_01.gif')
 
       bluecar.crashed = false
       redcarUp.crashed = false
@@ -102,6 +102,10 @@
         start: 3, end: 59, zeroPad: 2, prefix: 'bikergirl_', suffix: '.gif'
       })
 
+      defaultBikingFrames = this.anims.generateFrameNames('bikergirl', {
+        start: 11, end: 18, zeroPad: 2, prefix: 'bikergirl_', suffix: '.gif'
+      })
+
       upFrames = this.anims.generateFrameNames('bikergirl', {
         start: 3, end: 6, zeroPad: 2, prefix: 'bikergirl_', suffix: '.gif'
       })
@@ -111,7 +115,7 @@
       })
 
       rightDiagonalFrames = this.anims.generateFrameNames('bikergirl', {
-        start: 11, end: 18, zeroPad: 2, prefix: 'bikergirl_', suffix: '.gif'
+        start: 19, end: 22, zeroPad: 2, prefix: 'bikergirl_', suffix: '.gif'
       })
 
       crashFrames = this.anims.generateFrameNames('bikergirl', {
@@ -202,11 +206,18 @@
       })
 
 
+      this.anims.create({
+        key: 'default',
+        frames: defaultBikingFrames,
+        frameRate: 7,
+        repeat: 0
+      })
+
       this.time.addEvent(
         {
           delay: 4000,
           callback: function () {
-            bluecar.enableBody(true, 50, 600, true, true) // GOOD!
+            bluecar.enableBody(true, 100, 600, true, true) // GOOD!
           }
         }
       );
@@ -269,7 +280,7 @@
         {
           delay: 6500,
           callback: function () {
-            redcarDown.enableBody(true, 1500, 0, true, true)
+            redcarDown.enableBody(true, 1600, 0, true, true)
           }
         }
       );
@@ -314,8 +325,8 @@
       scoreText.setText('Score: ' + score);
 
       if (!businessMan.crashed) {
-        businessMan.setVelocityX(1);
-        businessMan.setVelocityY(-.5);
+        businessMan.setVelocityX(-20);
+        businessMan.setVelocityY(10);
       } else {
         businessMan.setVelocityX(-60);
         businessMan.setVelocityY(30);
@@ -377,7 +388,7 @@
         garbageTruckDown.setVelocityY(30);
       }
 
-      if (roadmap.x > -1600) {
+      if (roadmap.x > -1250) {
         roadmap.y = roadmap.y + .6;
         roadmap.x = roadmap.x - 1.2;
       }
@@ -389,21 +400,28 @@
       if (crashed === false) {
 
         if (cursors.up.isDown) {
-          bikergirl.setVelocityY(-40);
+          bikergirl.setVelocityY(-70);
           bikergirl.anims.play('up', true);
         }
         else if (cursors.right.isDown) {
-          bikergirl.setVelocityX(40)
+          bikergirl.setVelocityX(80)
+          bikergirl.setVelocityY(10);
           // bikergirl.setVelocityX(120)
           bikergirl.anims.play('right', true)
         }
         else if (cursors.left.isDown) {
-          bikergirl.setVelocityX(-40);
+          bikergirl.setVelocityX(-60);
+          bikergirl.setVelocityY(-40);
           bikergirl.anims.play('left', true);
         }
 
         else if (cursors.down.isDown) {
           bikergirl.anims.play('victory', true)
+        }
+        else {
+          bikergirl.anims.play('default', true);
+          // bikergirl.setVelocityX(-30);
+          bikergirl.setVelocityY(-10);
         }
       }
 
