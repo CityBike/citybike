@@ -1,0 +1,41 @@
+{
+	"textures": [
+		{
+			"image": "finishLine.png",
+			"format": "RGBA8888",
+			"size": {
+				"w": 1719,
+				"h": 922
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "FinishLinev2.png",
+					"frame": {
+						"x": 1,
+						"y": 1,
+						"w": 1717,
+						"h": 920
+					},
+					"rotated": false,
+					"trimmed": true,
+					"spriteSourceSize": {
+						"x": 27,
+						"y": 37,
+						"w": 1717,
+						"h": 920
+					},
+					"sourceSize": {
+						"w": 1776,
+						"h": 1037
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "https://www.codeandweb.com/texturepacker",
+		"version": "3.0",
+		"smartupdate": "$TexturePacker:SmartUpdate:c8f5e8392132fe67426fa917fefd53fb:a5390e8b8d73ec76cef8d7b6383017e0:042b1754912c55ee3966dc25e8f6c687$"
+	}
+}
