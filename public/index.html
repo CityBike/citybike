@@ -62,11 +62,6 @@
 
     function create() {
 
-      console.log(this.input.keyboard)
-      this.input.keyboard.on('keydown_A', function (event) {
-
-      })
-
       roadmap = this.add.image(800, 50, 'roadmap');
 
       scoreText = this.add.text(16, 16, 'score: 0', { fontSize: '32px', fill: '#000' });
@@ -79,11 +74,6 @@
       garbageTruckUp = this.physics.add.sprite(1000, 0, 'garbageTruckUp');
       garbageTruckDown = this.physics.add.sprite(1000, 0, 'garbageTruckDown');
       businessMan = this.physics.add.sprite(225, 400, 'businessMan', 'business_guy_01.gif')
-
-      this.cameras.main.setSize(800, 600)
-      movingCamera = this.cameras.add(0, 0, 800, 600);
-      // this.cameras.main.setBounds(0, 0, 6281, 3205);
-      // this.cameras.main.startFollow(bikergirl);
 
       bluecar.crashed = false
       redcarUp.crashed = false
@@ -101,10 +91,7 @@
       garbageTruckUp.disableBody(true, true)
       garbageTruckDown.disableBody(true, true)
 
-
-
       manCollider = this.physics.add.collider(businessMan, bikergirl, smack, null, this)
-
 
       bluecarCollider = this.physics.add.collider(bluecar, bikergirl, bluecarCrash, null, this)
       redcarUpCollider = this.physics.add.collider(redcarUp, bikergirl, redcarUpCrash, null, this)
@@ -114,14 +101,12 @@
       garbageTruckUpCollider = this.physics.add.collider(garbageTruckUp, bikergirl, garbageTruckUpCrash, null, this)
       garbageTruckDownCollider = this.physics.add.collider(garbageTruckDown, bikergirl, garbageTruckDownCrash, null, this)
 
-
       bikergirl.setBounce(0.2);
       bikergirl.setCollideWorldBounds(true);
 
 
       cursors = this.input.keyboard.createCursorKeys();
 
-      console.log(cursors);
       createAnims(this);
 
       this.time.addEvent(
@@ -205,28 +190,16 @@
         }
       );
 
-      // this.time.addEvent(
-      //   {
-      //     delay: 10000,
-      //     callback: function () {
-      //       redcarDown2.enableBody(true, 1500, 0, true, true)
-      //     }
-      //   }
-      // );
+      this.time.addEvent(
+        {
+          delay: 10000,
+          callback: function () {
+            redcarDown2.enableBody(true, 1500, 0, true, true)
+          }
+        }
+      );
 
-      // this.time.addEvent(
-      //   {
-      //     delay: 3000,
-      //     callback: function () {
-      //       nearFinishLine = true;
-      //       finishLine.enableBody(true, 1000, 0, true, true)
-      //     }
-      //   }
-      // )
-
-      // bikergirl.anims.play("right")
       businessMan.anims.play("walk")
-      console.log('businessman', businessMan);
     }
 
 
@@ -249,10 +222,6 @@
 
       scoreText.setText('Score: ' + score);
 
-      movingCamera.scrollX += .4;
-      movingCamera.scrollY -= .2;
-
-      //console.log(this.cameras.main);
       if (!businessMan.crashed) {
         businessMan.setVelocityX(-20);
         businessMan.setVelocityY(10);
@@ -264,6 +233,9 @@
       if (!bluecar.crashed) {
         bluecar.setVelocityX(120);
         bluecar.setVelocityY(-60);
+      } else {
+        bluecar.setVelocityX(-60);
+        bluecar.setVelocityY(30);
       }
 
       if (!redcarUp.crashed) {
@@ -314,14 +286,14 @@
         garbageTruckDown.setVelocityY(30);
       }
 
-      // if (roadmap.x > -1250) {
-      //   roadmap.y = roadmap.y + .6;
-      //   roadmap.x = roadmap.x - 1.2;
-      // }
-      // else {
-      //   victory();
-      //   this.sys.pause();
-      // }
+      if (roadmap.x > -1250) {
+        roadmap.y = roadmap.y + .6;
+        roadmap.x = roadmap.x - 1.2;
+      }
+      else {
+        victory();
+        this.sys.pause();
+      }
 
 
       if (!crashed) {
@@ -333,7 +305,6 @@
         else if (cursors.right.isDown) {
           bikergirl.setVelocityX(80)
           bikergirl.setVelocityY(10);
-          // bikergirl.setVelocityX(120)
           bikergirl.anims.play('right', true)
         }
         else if (cursors.left.isDown)   {
@@ -348,35 +319,11 @@
 
         else {
           bikergirl.anims.play('default', true);
-          // bikergirl.setVelocityX(-30);
           bikergirl.setVelocityY(-10);
         }
       }
 
     }
-
-    // function vehicleCrash(scene, vehicle, collider) {
-    //   score -= 50;
-    //   bikergirl.anims.pause()
-    //   crashed = true
-    //   bikergirl.anims.play('crash', true);
-    //   game.sound.play('crashAudio');
-    //   businessMan.anims.pause()
-    //   // gameScene = game.scene.keys.default
-    //   scene.physics.pause()
-    //   scene.time.addEvent({
-    //     delay: 1000,
-    //     callback: function () {
-    //       gameScene.physics.resume()
-    //       crashed = false
-    //       vehicle.crashed = true
-    //       bikergirl.anims.resume()
-    //       bikergirl.anims.play('up', true)
-    //       businessMan.anims.resume()
-    //       gameScene.physics.world.removeCollider(collider);
-    //     }
-    //   })
-    // }
 
     function bluecarCrash() {
       score -= 50;
@@ -545,7 +492,6 @@
 
 
     function smack() {
-      console.log('smack', this)
       score -= 50
       bikergirl.anims.pause()
       businessMan.anims.pause()
