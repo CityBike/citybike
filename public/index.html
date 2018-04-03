@@ -2,6 +2,7 @@
 
 <head>
   <script src="//cdn.jsdelivr.net/npm/phaser@3.1.1/dist/phaser.js"></script>
+  <script src="../js/anims.js"></script>
 
   <meta charset="UTF-8">
   <title></title>
@@ -40,6 +41,8 @@
     var scoreText;
     var finishLine;
     var roadmap;
+    var paused = false;
+    var movingCamera;
 
 
     function preload() {
@@ -58,8 +61,11 @@
     }
 
     function create() {
-      console.log(this);
 
+      console.log(this.input.keyboard)
+      this.input.keyboard.on('keydown_A', function (event) {
+
+      })
 
       roadmap = this.add.image(800, 50, 'roadmap');
 
@@ -73,6 +79,11 @@
       garbageTruckUp = this.physics.add.sprite(1000, 0, 'garbageTruckUp');
       garbageTruckDown = this.physics.add.sprite(1000, 0, 'garbageTruckDown');
       businessMan = this.physics.add.sprite(225, 400, 'businessMan', 'business_guy_01.gif')
+
+      this.cameras.main.setSize(800, 600)
+      movingCamera = this.cameras.add(0, 0, 800, 600);
+      // this.cameras.main.setBounds(0, 0, 6281, 3205);
+      // this.cameras.main.startFollow(bikergirl);
 
       bluecar.crashed = false
       redcarUp.crashed = false
@@ -90,45 +101,7 @@
       garbageTruckUp.disableBody(true, true)
       garbageTruckDown.disableBody(true, true)
 
-      manWalkingFrames = this.anims.generateFrameNames('businessMan', {
-        start: 1, end: 7, zeroPad: 2, prefix: 'business_guy_', suffix: '.gif'
-      })
 
-      manSmackedFrames = this.anims.generateFrameNames('businessMan', {
-        start: 42, end: 46, zeroPad: 2, prefix: 'business_guy_', suffix: '.gif'
-      })
-
-      allFrames = this.anims.generateFrameNames('bikergirl', {
-        start: 3, end: 59, zeroPad: 2, prefix: 'bikergirl_', suffix: '.gif'
-      })
-
-      defaultBikingFrames = this.anims.generateFrameNames('bikergirl', {
-        start: 11, end: 18, zeroPad: 2, prefix: 'bikergirl_', suffix: '.gif'
-      })
-
-      upFrames = this.anims.generateFrameNames('bikergirl', {
-        start: 3, end: 6, zeroPad: 2, prefix: 'bikergirl_', suffix: '.gif'
-      })
-
-      leftFrames = this.anims.generateFrameNames('bikergirl', {
-        start: 21, end: 24, zeroPad: 2, prefix: 'flipped_bikergirl_', suffix: '.gif'
-      })
-
-      rightDiagonalFrames = this.anims.generateFrameNames('bikergirl', {
-        start: 19, end: 22, zeroPad: 2, prefix: 'bikergirl_', suffix: '.gif'
-      })
-
-      crashFrames = this.anims.generateFrameNames('bikergirl', {
-        start: 32, end: 35, zeroPad: 2, prefix: 'bikergirl_', suffix: '.gif'
-      })
-
-      smackFrames = this.anims.generateFrameNames('bikergirl', {
-        start: 50, end: 54, zeroPad: 2, prefix: 'bikergirl_', suffix: '.gif'
-      })
-
-      victoryFrames = this.anims.generateFrameNames('bikergirl', {
-        start: 58, end: 59, zeroPad: 2, prefix: 'bikergirl_', suffix: '.gif'
-      })
 
       manCollider = this.physics.add.collider(businessMan, bikergirl, smack, null, this)
 
@@ -148,70 +121,8 @@
 
       cursors = this.input.keyboard.createCursorKeys();
 
-      this.anims.create({
-        key: 'right',
-        frames: rightDiagonalFrames,
-        frameRate: 10,
-        repeat: -1
-      })
-
-      this.anims.create({
-        key: 'all',
-        frames: allFrames,
-        frameRate: 10,
-        repeat: -1
-      })
-
-
-      this.anims.create({
-        key: 'crash',
-        frames: crashFrames,
-        frameRate: 5,
-        repeat: 0
-      })
-
-      this.anims.create({
-        key: 'up',
-        frames: upFrames,
-        frameRate: 10,
-        repeat: -1
-      })
-
-      this.anims.create({
-        key: 'left',
-        frames: leftFrames,
-        frameRate: 10,
-        repeat: -1
-      })
-
-      this.anims.create({
-        key: 'walk',
-        frames: manWalkingFrames,
-        frameRate: 10,
-        repeat: -1
-      })
-
-      this.anims.create({
-        key: 'smack',
-        frames: manSmackedFrames,
-        frameRate: 5,
-        repeat: 0
-      })
-
-      this.anims.create({
-        key: 'victory',
-        frames: victoryFrames,
-        frameRate: 5,
-        repeat: 0
-      })
-
-
-      this.anims.create({
-        key: 'default',
-        frames: defaultBikingFrames,
-        frameRate: 7,
-        repeat: 0
-      })
+      console.log(cursors);
+      createAnims(this);
 
       this.time.addEvent(
         {
@@ -315,15 +226,33 @@
 
       // bikergirl.anims.play("right")
       businessMan.anims.play("walk")
-
+      console.log('businessman', businessMan);
     }
 
 
     function update() {
+
+      if (cursors.space.isDown) {
+        if (!paused)
+          console.log('hit pause',this.scene)
+          console.log('keys', cursors);
+          console.log(this);
+          paused = true;
+          this.scene.pause();
+      } else {
+
+        paused = false;
+        this.scene.resume();
+      }
+
       score += 1;
 
       scoreText.setText('Score: ' + score);
 
+      movingCamera.scrollX += .4;
+      movingCamera.scrollY -= .2;
+
+      //console.log(this.cameras.main);
       if (!businessMan.crashed) {
         businessMan.setVelocityX(-20);
         businessMan.setVelocityY(10);
@@ -335,9 +264,6 @@
       if (!bluecar.crashed) {
         bluecar.setVelocityX(120);
         bluecar.setVelocityY(-60);
-      } else {
-        bluecar.setVelocityX(-60);
-        bluecar.setVelocityY(30);
       }
 
       if (!redcarUp.crashed) {
@@ -388,16 +314,17 @@
         garbageTruckDown.setVelocityY(30);
       }
 
-      if (roadmap.x > -1250) {
-        roadmap.y = roadmap.y + .6;
-        roadmap.x = roadmap.x - 1.2;
-      }
-      else {
-        victory();
-        this.sys.pause();
-      }
+      // if (roadmap.x > -1250) {
+      //   roadmap.y = roadmap.y + .6;
+      //   roadmap.x = roadmap.x - 1.2;
+      // }
+      // else {
+      //   victory();
+      //   this.sys.pause();
+      // }
 
-      if (crashed === false) {
+
+      if (!crashed) {
 
         if (cursors.up.isDown) {
           bikergirl.setVelocityY(-70);
@@ -409,7 +336,7 @@
           // bikergirl.setVelocityX(120)
           bikergirl.anims.play('right', true)
         }
-        else if (cursors.left.isDown) {
+        else if (cursors.left.isDown)   {
           bikergirl.setVelocityX(-60);
           bikergirl.setVelocityY(-40);
           bikergirl.anims.play('left', true);
@@ -418,6 +345,7 @@
         else if (cursors.down.isDown) {
           bikergirl.anims.play('victory', true)
         }
+
         else {
           bikergirl.anims.play('default', true);
           // bikergirl.setVelocityX(-30);
@@ -426,6 +354,29 @@
       }
 
     }
+
+    // function vehicleCrash(scene, vehicle, collider) {
+    //   score -= 50;
+    //   bikergirl.anims.pause()
+    //   crashed = true
+    //   bikergirl.anims.play('crash', true);
+    //   game.sound.play('crashAudio');
+    //   businessMan.anims.pause()
+    //   // gameScene = game.scene.keys.default
+    //   scene.physics.pause()
+    //   scene.time.addEvent({
+    //     delay: 1000,
+    //     callback: function () {
+    //       gameScene.physics.resume()
+    //       crashed = false
+    //       vehicle.crashed = true
+    //       bikergirl.anims.resume()
+    //       bikergirl.anims.play('up', true)
+    //       businessMan.anims.resume()
+    //       gameScene.physics.world.removeCollider(collider);
+    //     }
+    //   })
+    // }
 
     function bluecarCrash() {
       score -= 50;
@@ -442,6 +393,7 @@
           gameScene.physics.resume()
           crashed = false
           bluecar.crashed = true
+          bluecar.setVelocity(0, 0);
           bikergirl.anims.resume()
           bikergirl.anims.play('right', true)
           businessMan.anims.resume()
@@ -449,6 +401,8 @@
         }
       })
     }
+
+
 
     function redcarUpCrash() {
       score -= 50;
@@ -591,6 +545,7 @@
 
 
     function smack() {
+      console.log('smack', this)
       score -= 50
       bikergirl.anims.pause()
       businessMan.anims.pause()
@@ -598,7 +553,7 @@
       bikergirl.anims.play('crash', true);
       businessMan.anims.play('smack', true);
       game.sound.play('bodyFallAudio')
-      gameScene = game.scene.keys.default
+      gameScene = this;
       gameScene.physics.pause()
       gameScene.time.addEvent({
         delay: 1000,
@@ -614,6 +569,7 @@
     }
 
     function victory() {
+      bikergirl.anims.pause();
       bikergirl.anims.play('victory', true);
       hitsFinishLine = true;
     }
