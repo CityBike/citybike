@@ -97,7 +97,6 @@ function createAnims(scene) {
     repeat: 0
   })
 
-
   scene.anims.create({
     key: 'default',
     frames: defaultBikingFrames,
